@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7791217777325284314, guid: 040f84858cc23ce4cb0e42f1dd3f93ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 66fb8670c36111f45bfdf17746cfbbda, type: 2}
     - target: {fileID: 7791217777325284319, guid: 040f84858cc23ce4cb0e42f1dd3f93ae, type: 3}
       propertyPath: m_Name
       value: Golf Ball
