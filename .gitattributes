@@ -2,3 +2,5 @@
 * text=auto
 *.fbx filter=lfs diff=lfs merge=lfs -text
 *.blend filter=lfs diff=lfs merge=lfs -text
+Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/External/**/*.zip filter=lfs diff=lfs merge=lfs -text
+Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/External/**/*.png filter=lfs diff=lfs merge=lfs -text
