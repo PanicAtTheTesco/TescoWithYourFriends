@@ -25,7 +25,9 @@ public class Movement : MonoBehaviour
             Debug.Log(mainSlider.value);
             rb.AddForce(-transform.right * mainSlider.value);
         }
-       
+        
+
+
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +39,10 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             transform.Rotate(Vector3.up * speed * Time.deltaTime);
+        }
+        if (rb.velocity != stopped)
+        {
+            mainSlider.value = 50.0f;
         }
 
 
