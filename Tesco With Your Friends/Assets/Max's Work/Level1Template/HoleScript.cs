@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HoleScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HoleScript : MonoBehaviour
         {
             Debug.Log("Win");
             audioSource.Play();
+            SceneManager.LoadScene("Level_01");
         }
     }
 

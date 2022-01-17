@@ -10,11 +10,14 @@ public class Movement : MonoBehaviour
     public Slider mainSlider;
     public Vector3 stopped = new Vector3(0.0f, 0.0f, 0.0f);
     public float speed = 5.0f;
+    
     public GameObject Arrow;
     public bool Moving = true;
 
+    public Transform PlayerPos;
+    public Transform startPos;
 
-
+    public int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,25 +29,25 @@ public class Movement : MonoBehaviour
     public void ValueChangeCheck()
     {
         Moving = true;
+
         if (rb.velocity == stopped)
         {
-            Debug.Log(mainSlider.value);
             rb.AddForce(-transform.right * mainSlider.value);
+            score = score + 1;
+
         }
-        
+
         if (rb.velocity == stopped)
         {
             transform.rotation = Quaternion.identity;
-        }
 
+        }
 
 
     }
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(rb.velocity.magnitude);
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(-Vector3.up * speed * Time.deltaTime);
@@ -53,6 +56,7 @@ public class Movement : MonoBehaviour
         {
             transform.Rotate(Vector3.up * speed * Time.deltaTime);
         }
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.back * speed * Time.deltaTime);
@@ -70,12 +74,20 @@ public class Movement : MonoBehaviour
             mainSlider.value = 50.0f;
             Arrow.SetActive(false);
         }
-        if (Moving && rb.velocity.magnitude < 0.2f)
+        if (Moving && rb.velocity.magnitude < 0.4f)
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             transform.rotation = Quaternion.identity;
             Moving = false;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "DeathBox")
+        {
+           transform.position = new Vector3(42.66f, 1.96f, 4.94f);
         }
     }
 }
