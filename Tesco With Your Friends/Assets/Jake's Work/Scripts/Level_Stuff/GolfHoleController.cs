@@ -4,7 +4,7 @@ using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
     public class GolfHoleController : MonoBehaviour {
-        [SerializeField] [Min(1)] private int m_StrokeLimit = 12;
+        [SerializeField] [Min(1)] [Tooltip("Time limit in seconds for this hole.")] private float m_TimeLimit = 60;
         [SerializeField] [Tooltip("Next hole to send the players to upon completion. Leave blank to end the course.")] private GolfHoleController m_NextHole;
         [SerializeField] [Tooltip("Where to spawn the player golfballs.")] private Transform m_BallSpawnPoint;
         [SerializeField] [Tooltip("The first hole needs to have this set.")] private bool m_IsFirst;
@@ -23,8 +23,8 @@ namespace Tesco.Level_Stuff {
             return m_NextHole;
         }
 
-        public int GetLimit() {
-            return m_StrokeLimit;
+        public float GetLimit() {
+            return m_TimeLimit;
         }
 
         public void SpawnBalls(List<Movement> players) {
@@ -32,7 +32,7 @@ namespace Tesco.Level_Stuff {
                 player.transform.position = m_BallSpawnPoint.position;
                 player.gameObject.SetActive(true);
             }
-            EventManager.ResetBalls();
+            //EventManager.ResetBalls();
         }
     }
 }

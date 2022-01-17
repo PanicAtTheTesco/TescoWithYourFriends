@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
-    public class GolfHole : MonoBehaviour {
+    public class OutOfBounds : MonoBehaviour {
 
         private void OnTriggerEnter(Collider other) {
             if (!other.gameObject.CompareTag("Player")) {
@@ -11,9 +10,8 @@ namespace Tesco.Level_Stuff {
                 return; //In case a physics object falls into the hole, such as a box.
             }
             Movement pMovement = other.GetComponent<Movement>();
-            Debug.LogWarning(pMovement.m_Player + " finished in " + pMovement.m_CurrentTime + " seconds!");
-            EventManager.BallScored(pMovement);
+            pMovement.rb.velocity = Vector3.zero;
+            pMovement.transform.position = pMovement.m_PrevPosition;
         }
-
     }
 }

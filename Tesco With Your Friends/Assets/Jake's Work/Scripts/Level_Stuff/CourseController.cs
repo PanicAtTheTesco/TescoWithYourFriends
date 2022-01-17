@@ -6,13 +6,13 @@ using Tesco.Managers;
 namespace Tesco.Level_Stuff {
     public class CourseController : MonoBehaviour {
         [SerializeField] private GameObject m_GolfBallPrefab;
-        private Dictionary<PlayerNumber, int> m_PlayerScores;
+        private Dictionary<PlayerNumber, float> m_PlayerScores;
         private GolfHoleController m_CurrentHole;
         private List<PlayerNumber> m_InHole;
         private List<Movement> m_Players;
 
         private void Awake() {
-            m_PlayerScores = new Dictionary<PlayerNumber, int>();
+            m_PlayerScores = new Dictionary<PlayerNumber, float>();
             m_InHole = new List<PlayerNumber>();
             m_Players = new List<Movement>();
 
@@ -30,22 +30,22 @@ namespace Tesco.Level_Stuff {
 
         private void OnBallScored(Movement player) {
             PlayerNumber num = player.m_Player;
-            int strokes = player.m_Strokes;
+            float timeTaken = player.m_CurrentTime;
             if (!m_PlayerScores.ContainsKey(num)) {
-                m_PlayerScores.Add(num, strokes);
+                m_PlayerScores.Add(num, timeTaken);
             }
             else {
-                int pStr;
+                float pStr;
                 if (m_PlayerScores.TryGetValue(num, out pStr)) {
-                    pStr += strokes;
+                    pStr += timeTaken;
 
                     m_PlayerScores[num] = pStr;
                 }
             }
             print(m_PlayerScores[num]);
             m_InHole.Add(num);
-            player.gameObject.SetActive(false); //Temp measure
-
+            //player.gameObject.SetActive(false); //Temp measure
+            player.SetIgnore(true);
             if (m_InHole.Count >= m_PlayerScores.Count) {
                 //Next hole
                 m_InHole.Clear();
@@ -61,11 +61,12 @@ namespace Tesco.Level_Stuff {
                 else {
                     m_CurrentHole = m_CurrentHole.GetNext();
                     m_CurrentHole.SpawnBalls(m_Players);
+                    EventManager.ResetBalls();
                 }
             }
         }
 
-        public int GetStrokeLimit() {
+        public float GetTimeLimit() {
             return m_CurrentHole.GetLimit();
         }
 
@@ -82,6 +83,7 @@ namespace Tesco.Level_Stuff {
                 pMov.SetCourse(this);
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(num, 0);
+                player.transform.parent = transform;
             }
         }
 

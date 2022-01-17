@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32326ed87adb7c94a9e0fb0ecbd0f8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StrokeLimit: 12
+  m_TimeLimit: 30
   m_NextHole: {fileID: 0}
   m_BallSpawnPoint: {fileID: 1611413045}
   m_IsFirst: 0
@@ -469,6 +469,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430889498}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &441405878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441405879}
+  - component: {fileID: 441405881}
+  - component: {fileID: 441405880}
+  m_Layer: 0
+  m_Name: OutOfBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441405879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441405878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.64, z: 0}
+  m_LocalScale: {x: 1000, y: 1, z: 1000}
+  m_Children: []
+  m_Father: {fileID: 940440571}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &441405880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441405878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88ca0c13dcc95b45a23a71b9548b624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &441405881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441405878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &514952387
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +1019,7 @@ Transform:
   m_Children:
   - {fileID: 1452330794}
   - {fileID: 353442358}
+  - {fileID: 441405879}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1200,7 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32326ed87adb7c94a9e0fb0ecbd0f8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StrokeLimit: 12
+  m_TimeLimit: 10
   m_NextHole: {fileID: 353442359}
   m_BallSpawnPoint: {fileID: 2086042268}
   m_IsFirst: 1
