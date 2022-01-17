@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class HoleScript : MonoBehaviour
 {
-    public AudioSource audioSource;
+    AudioSource audioSource;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Hole")
         {
             Debug.Log("Win");
             audioSource.Play();
-            SceneManager.LoadScene("Level_01");
         }
     }
 
