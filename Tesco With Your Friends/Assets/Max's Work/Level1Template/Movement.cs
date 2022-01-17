@@ -10,8 +10,7 @@ public class Movement : MonoBehaviour
     public Slider mainSlider;
     public Vector3 stopped = new Vector3(0.0f, 0.0f, 0.0f);
     public float speed = 5.0f;
-<<<<<<< Updated upstream
-=======
+    
     public GameObject Arrow;
     public bool Moving = true;
 
@@ -19,48 +18,36 @@ public class Movement : MonoBehaviour
     public Transform startPos;
 
     public int score = 0;
-    
-
-
->>>>>>> Stashed changes
-
 
     // Start is called before the first frame update
     void Start()
     {
         mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        Moving = true;
     }
 
     public void ValueChangeCheck()
     {
+        Moving = true;
+
         if (rb.velocity == stopped)
         {
             rb.AddForce(-transform.right * mainSlider.value);
             score = score + 1;
 
         }
-<<<<<<< Updated upstream
-        
-=======
 
         if (rb.velocity == stopped)
         {
             transform.rotation = Quaternion.identity;
 
         }
-        
-
->>>>>>> Stashed changes
 
 
     }
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(-Vector3.up * speed * Time.deltaTime);
@@ -69,11 +56,7 @@ public class Movement : MonoBehaviour
         {
             transform.Rotate(Vector3.up * speed * Time.deltaTime);
         }
-<<<<<<< Updated upstream
-        if (rb.velocity != stopped)
-        {
-            mainSlider.value = 50.0f;
-=======
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.back * speed * Time.deltaTime);
@@ -85,14 +68,11 @@ public class Movement : MonoBehaviour
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
-            
-            
         }
         if (rb.velocity != stopped)
         {
             mainSlider.value = 50.0f;
             Arrow.SetActive(false);
-           
         }
         if (Moving && rb.velocity.magnitude < 0.4f)
         {
@@ -100,16 +80,14 @@ public class Movement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             transform.rotation = Quaternion.identity;
             Moving = false;
-            }
+        }
     }
+
     public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "DeathBox")
         {
            transform.position = new Vector3(42.66f, 1.96f, 4.94f);
->>>>>>> Stashed changes
         }
-
-
     }
 }
