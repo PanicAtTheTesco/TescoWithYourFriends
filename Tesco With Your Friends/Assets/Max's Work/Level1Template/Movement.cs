@@ -13,17 +13,20 @@ public class Movement : MonoBehaviour
     
     public GameObject Arrow;
     public bool Moving = true;
+    public bool FireballActive = false;
 
     public Transform PlayerPos;
     public Transform startPos;
 
     public int score = 0;
+    public ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
     {
         mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         Moving = true;
+        ps = GetComponent<ParticleSystem>();
     }
 
     public void ValueChangeCheck()
@@ -32,15 +35,26 @@ public class Movement : MonoBehaviour
 
         if (rb.velocity == stopped)
         {
-            rb.AddForce(-transform.right * mainSlider.value);
-            score = score + 1;
+            if (!FireballActive)
+            {
+                rb.AddForce(-transform.right * mainSlider.value);
+                score = score + 1;
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+
+            if (FireballActive)
+            {
+                rb.AddForce(-transform.right * mainSlider.value * 3.0f);
+                score = score + 1;
+                ps.Play();
+            }
 
         }
 
         if (rb.velocity == stopped)
         {
             transform.rotation = Quaternion.identity;
-
+            FireballActive = false;
         }
 
 
