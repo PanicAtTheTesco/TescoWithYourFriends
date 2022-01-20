@@ -11,7 +11,6 @@ namespace Tesco.Level_Stuff {
                 return; //In case a physics object falls into the hole, such as a box.
             }
             Movement pMovement = other.GetComponent<Movement>();
-            Debug.LogWarning(pMovement.m_Player + " finished in " + pMovement.m_CurrentTime + " seconds!");
             EventManager.BallScored(pMovement);
         }
 

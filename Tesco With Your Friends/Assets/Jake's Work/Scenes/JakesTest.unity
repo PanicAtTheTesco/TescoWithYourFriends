@@ -176,7 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32326ed87adb7c94a9e0fb0ecbd0f8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeLimit: 30
+  m_TimeLimit: 60
+  m_Strokes: 12
   m_NextHole: {fileID: 0}
   m_BallSpawnPoint: {fileID: 1611413045}
   m_IsFirst: 0
@@ -1258,7 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32326ed87adb7c94a9e0fb0ecbd0f8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeLimit: 10
+  m_TimeLimit: 30
+  m_Strokes: 3
   m_NextHole: {fileID: 353442359}
   m_BallSpawnPoint: {fileID: 2086042268}
   m_IsFirst: 1

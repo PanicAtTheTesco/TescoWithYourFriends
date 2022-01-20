@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Tesco.Level_Stuff;
 
 namespace Tesco.Managers {
     public class GameManager : MonoBehaviour {
@@ -22,20 +21,15 @@ namespace Tesco.Managers {
             }
             m_Instance = this;
         }
+        ////////////////////////////////
+        [SerializeField] private LevelHandler m_Levelhandler;
 
-        /////////////////////////////////////////
-
-        [SerializeField] private LevelHandler m_LevelHandler;
-        
-
-        public void SwitchLevel(LevelType levelType) {
-            m_LevelHandler.SwitchLevel(levelType);
+        public void SwitchLevel(LevelType level) {
+            m_Levelhandler.SwitchLevel(level);
         }
 
         public void Quit() {
             Application.Quit();
         }
-
-       
     }
 }
