@@ -43,6 +43,7 @@ public class Movement : MonoBehaviour
         mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
         EventManager.resetBallsEvent += OnResetBall;
+        // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
 
     public void ValueChangeCheck()

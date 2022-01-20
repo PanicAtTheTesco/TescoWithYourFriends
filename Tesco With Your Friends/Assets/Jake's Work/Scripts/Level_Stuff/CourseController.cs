@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
     public class CourseController : MonoBehaviour {
         [SerializeField] private GameObject m_GolfBallPrefab;
+
         private Dictionary<Movement, int> m_PlayerScores;
         private GolfHoleController m_CurrentHole;
         private List<Movement> m_InHole;
@@ -41,6 +43,10 @@ namespace Tesco.Level_Stuff {
                 m_CurrentHole.SpawnBalls(m_Players);
                 EventManager.ResetBalls();
                 m_IgnoreUpdate = false;
+                foreach(Movement player in m_CurrentHoleStrokes.Keys)
+                {
+                    m_CurrentHoleStrokes[player] = 0;
+                }
             }
         }
 
@@ -131,6 +137,7 @@ namespace Tesco.Level_Stuff {
 
         private void CreatePlayers(int amount) {
             for (int i = 0; i < amount; i++) {
+
                 GameObject player = Instantiate(m_GolfBallPrefab);
                 Movement pMov = player.GetComponent<Movement>();
                 PlayerNumber num = (PlayerNumber)i;
@@ -139,8 +146,10 @@ namespace Tesco.Level_Stuff {
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
-                player.transform.parent = transform;
+                //player.transform.parent = transform;
+                
             }
+            m_CurrentHole.SpawnBalls(m_Players);
         }
 
         private void Update() {

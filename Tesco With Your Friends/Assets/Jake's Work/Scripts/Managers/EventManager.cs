@@ -12,10 +12,19 @@ namespace Tesco.Managers {
         public static Action resetBallsEvent;
         public static Action<Movement> ballHitEvent;
         public static Action<Movement> checkStrokeCountEvent;
+        public static Action<Movement> changePlayerTurnEvent;
 
         public static void StrokeOut(Movement movement) {
             if(ballStrokedOutEvent != null) {
                 ballStrokedOutEvent.Invoke(movement);
+            }
+        }
+
+        public static void ChangeTurn(Movement player)
+        {
+            if(changePlayerTurnEvent != null)
+            {
+                changePlayerTurnEvent.Invoke(player);
             }
         }
 
