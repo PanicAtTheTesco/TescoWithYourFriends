@@ -33,18 +33,11 @@ public class Movement : MonoBehaviour
         if (rb.velocity == stopped)
         {
             rb.AddForce(-transform.right * mainSlider.value);
-            score = score + 1;
-
+            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            score += 1;
         }
-
-        if (rb.velocity == stopped)
-        {
-            transform.rotation = Quaternion.identity;
-
-        }
-
-
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,7 +49,6 @@ public class Movement : MonoBehaviour
         {
             transform.Rotate(Vector3.up * speed * Time.deltaTime);
         }
-
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.back * speed * Time.deltaTime);
@@ -74,18 +66,18 @@ public class Movement : MonoBehaviour
             mainSlider.value = 50.0f;
             Arrow.SetActive(false);
         }
-        if (Moving && rb.velocity.magnitude < 0.4f)
+        if (Moving && (rb.velocity.magnitude < 0.4f))
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            transform.rotation = Quaternion.identity;
+            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             Moving = false;
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "DeathBox")
+        if(other.CompareTag("DeathBox"))
         {
            transform.position = new Vector3(42.66f, 1.96f, 4.94f);
         }
