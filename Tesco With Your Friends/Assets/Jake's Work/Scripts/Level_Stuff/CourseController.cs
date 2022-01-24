@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
-    public class CourseController : MonoBehaviour {
-        [SerializeField] private GameObject m_GolfBallPrefab;
 
-        private Dictionary<Movement, int> m_PlayerScores;
-        private GolfHoleController m_CurrentHole;
-        private List<Movement> m_InHole;
-        private List<Movement> m_Players;
-        public float m_Time { get; private set; }
-        private bool m_IgnoreUpdate = false;
+    // Manages the gameplay loop for a particular level
+    public class CourseController : MonoBehaviour {
+        [SerializeField] private GameObject m_GolfBallPrefab; // Prefab of the golf ball to spawn for each player
+
+        private Dictionary<Movement, int> m_PlayerScores; // The current total scores, updated after each hole
+        private GolfHoleController m_CurrentHole; // The controller for the current hole
+        private List<Movement> m_InHole; // The players that have scored for the current hole (?)
+        private List<Movement> m_Players; // All the players currently in the scene
+        public float m_Time { get; private set; } // The time the player has spent on this hole
+        private bool m_IgnoreUpdate = false; // NOTE: I have no idea what this does, seems to track whether we've already started transitioning to the next hole
         private Dictionary<Movement, int> m_CurrentHoleStrokes; //Used to keep track of the strokes for the current hole, gets added onto m_PlayerScores once the OnBallScored method is fired
 
         private void Awake() {
@@ -23,26 +25,36 @@ namespace Tesco.Level_Stuff {
             m_CurrentHoleStrokes = new Dictionary<Movement, int>();
             m_Time = 0;
             
-
+            // Register event handlers
             EventManager.ballScoreEvent += OnBallScored;
-            EventManager.ballStrokedOutEvent += OnBallScored;
+            EventManager.ballStrokedOutEvent += OnBallScored; // NOTE: why is this the same handler?
             EventManager.ballHitEvent += OnBallHit;
             EventManager.checkStrokeCountEvent += OnStrokeCheck;
         }
 
+        // Starts a something (course? hole?)
         private void Start() {
             CreatePlayers(1);
         }
 
+        // Try to switch to the next hole
+        // NOTE: Why is this attempt? It's not like it can fail?
         private void AttemptHoleSwitch() {
-            if(m_CurrentHole.GetNext() == null) {
-                Invoke("Finished", 5); //Replace with Leaderboard UI before sending back to menu.
+            if (m_CurrentHole.GetNext() == null) {
+                // If there's no hole in the current course after this one, switch scenes
+                // TODO: show current scores on leaderboard before switching levels
+                Invoke("Finished", 5); 
             }
-            else {
+            else
+            {
+                // Switch to next hole and reset ball
                 m_CurrentHole = m_CurrentHole.GetNext();
                 m_CurrentHole.SpawnBalls(m_Players);
                 EventManager.ResetBalls();
                 m_IgnoreUpdate = false;
+                
+                // Reset scores for the current hole
+                // NOTE: Why isn't this just stored on GolfHoleController??
                 foreach(Movement player in m_CurrentHoleStrokes.Keys)
                 {
                     m_CurrentHoleStrokes[player] = 0;
@@ -50,6 +62,7 @@ namespace Tesco.Level_Stuff {
             }
         }
 
+        // Handle when ball stops moving after a hit, and end game if they've reached the stroke limit
         private void OnStrokeCheck(Movement player) {
             int strokes = 0;
             if(!m_CurrentHoleStrokes.TryGetValue(player, out strokes)) {
@@ -62,11 +75,14 @@ namespace Tesco.Level_Stuff {
             }
         }
 
+        // Set the current hole and reset some (NOTE: but not all???) of the current hole state
         public void SetHole(GolfHoleController hole) {
             m_IgnoreUpdate = false;
             m_CurrentHole = hole;
             m_Time = 0;
         }
+
+        // Handle ball hit and increment current stroke count
         private void OnBallHit(Movement ball) {
             int strokes = 0;
             if(!m_CurrentHoleStrokes.TryGetValue(ball, out strokes)) {
@@ -78,19 +94,24 @@ namespace Tesco.Level_Stuff {
             m_CurrentHoleStrokes[ball] = strokes;
         }
 
+        // Handle when the player scores, add their scores from current hole to running total
         private void OnBallScored(Movement player) {
+            // Get their score for the hole
             PlayerNumber num = player.m_Player;
             int strokes = 0;
             if(!m_CurrentHoleStrokes.TryGetValue(player, out strokes)) {
                 Debug.LogWarning("[ERROR]: Player doesn't exist in the CurrentHoleStrokes dictionary!");
-                AttemptHoleSwitch();
+                AttemptHoleSwitch(); // NOTE: WHY WOULD YOU DO THAT HERE?
                 return;
             }
-            //float timeTaken = player.m_CurrentTime;
-            if (!m_PlayerScores.ContainsKey(player)) {
+
+            // Add score from this hole to their running total
+            if (!m_PlayerScores.ContainsKey(player))
+            {
                 m_PlayerScores.Add(player, strokes);
             }
-            else {
+            else
+            {
                 int pStr;
                 if (m_PlayerScores.TryGetValue(player, out pStr)) {
                     pStr += strokes;
@@ -99,23 +120,29 @@ namespace Tesco.Level_Stuff {
                 }
             }
             print(m_PlayerScores[player]);
+
+            // Track that they're in the hole
             m_InHole.Add(player);
+
             //player.gameObject.SetActive(false); //Temp measure
             player.SetIgnore(true);
+
+            // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
-                //Next hole
                 m_InHole.Clear();
-                //Update leaderboard
+                // TODO: Update leaderboard
                 
-                //
-                if(m_CurrentHole.GetNext() == null) {
+                // NOTE: WE HAVE A METHOD FOR THIS WHY DID YOU COPY IT DOWN HERE
+                if (m_CurrentHole.GetNext() == null)
+                {
                     //Course ends
                     //Display leaderboard for the course
                     Debug.LogWarning("Course finished!");
                     m_IgnoreUpdate = true;
                     Invoke("Finished", 5);
                 }
-                else {
+                else
+                {
                     m_CurrentHole = m_CurrentHole.GetNext();
                     m_CurrentHole.SpawnBalls(m_Players);
                     EventManager.ResetBalls();
@@ -132,9 +159,12 @@ namespace Tesco.Level_Stuff {
         }
 
         private void Finished() {
-            GameManager.Instance.SwitchLevel(LevelType.MainMenu);
+            // NOTE: PLEASE
+//            GameManager.Instance.SwitchLevel(LevelType.MainMenu);
         }
 
+        // Spawn a given number of players.
+        // TODO: turn system, ability to spawn AI players
         private void CreatePlayers(int amount) {
             for (int i = 0; i < amount; i++) {
 
@@ -146,32 +176,43 @@ namespace Tesco.Level_Stuff {
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
+
+                // Commented out because this breaks many things
                 //player.transform.parent = transform;
-                
             }
+
+            // Position all the players according to the current hole's start position
             m_CurrentHole.SpawnBalls(m_Players);
         }
 
+        // Keep track of time and switch hole if time limit reached
         private void Update() {
+            // If in hole, don't update time
             if (m_IgnoreUpdate) {
                 return;
             }
+
+            // Increment timer
             m_Time += Time.deltaTime;
 
             if(m_Time >= m_CurrentHole.GetLimit()) {
+
                 foreach(Movement player in m_Players) {
                     if (m_InHole.Contains(player)) { continue; }
                     int strokes;
                     if(!m_PlayerScores.TryGetValue(player, out strokes)) {
                         continue;
                     }
+                    // NOTE: this doesn't... do anything?? Not sure if this is meant to update the player's scores
                     strokes += m_CurrentHole.GetStrokes();
                 }
                 m_IgnoreUpdate = true;
+                // Switch hole after time limit reached
                 AttemptHoleSwitch();
             }
         }
 
+        // Unregister events (NOTE: why twice?)
         private void OnDisable() {
             EventManager.ballScoreEvent -= OnBallScored;
             EventManager.ballStrokedOutEvent -= OnBallScored;

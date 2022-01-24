@@ -12,6 +12,8 @@ namespace Tesco.UI {
         Quit //Quit the application
     }
     public class MenuButton : MonoBehaviour, IPointerClickHandler {
+        private Tesco.Managers.GameManager m_GameManager;
+
         [InspectorName("Menu Type")] [SerializeField] private MenuButtonType m_Type;
 
         //========Close========\\
@@ -21,6 +23,10 @@ namespace Tesco.UI {
         //========Switch UI========\\
         [SerializeField] private GameObject m_WindowToSwitchTo;
 
+        private void Awake()
+        {
+            m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<Tesco.Managers.GameManager>();
+        }
 
         public void OnPointerClick(PointerEventData eventData) {
             switch (m_Type) {
@@ -28,14 +34,14 @@ namespace Tesco.UI {
                     m_WindowToClose.SetActive(false);
                     break;
                 case MenuButtonType.SwitchScene:
-                    GameManager.Instance.SwitchLevel(m_SceneToSwitch);
+                    m_GameManager.SwitchLevel(m_SceneToSwitch);
                     break;
                 case MenuButtonType.SwitchUI:
                     m_WindowToClose.SetActive(false);
                     m_WindowToSwitchTo.SetActive(true);
                     break;
                 case MenuButtonType.Quit:
-                    GameManager.Instance.Quit();
+                    m_GameManager.Quit();
                     break;
             }
 

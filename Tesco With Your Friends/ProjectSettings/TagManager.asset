@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hole
   - DeathBox
+  - GameManager
   layers:
   - Default
   - TransparentFX
