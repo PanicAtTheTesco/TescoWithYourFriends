@@ -38,3 +38,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.blend1
+
+# User settings
+Tesco With Your Friends/UserSettings/EditorUserSettings.asset
