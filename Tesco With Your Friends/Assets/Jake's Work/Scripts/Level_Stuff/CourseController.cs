@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Tesco.Managers;
 
@@ -8,6 +9,8 @@ namespace Tesco.Level_Stuff {
 
     // Manages the gameplay loop for a particular level
     public class CourseController : MonoBehaviour {
+        private GameManager m_GameManager;
+
         [SerializeField] private GameObject m_GolfBallPrefab; // Prefab of the golf ball to spawn for each player
 
         private Dictionary<Movement, int> m_PlayerScores; // The current total scores, updated after each hole
@@ -19,6 +22,7 @@ namespace Tesco.Level_Stuff {
         private Dictionary<Movement, int> m_CurrentHoleStrokes; //Used to keep track of the strokes for the current hole, gets added onto m_PlayerScores once the OnBallScored method is fired
 
         private void Awake() {
+            m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
             m_PlayerScores = new Dictionary<Movement, int>();
             m_InHole = new List<Movement>();
             m_Players = new List<Movement>();
@@ -43,7 +47,7 @@ namespace Tesco.Level_Stuff {
             if (m_CurrentHole.GetNext() == null) {
                 // If there's no hole in the current course after this one, switch scenes
                 // TODO: show current scores on leaderboard before switching levels
-                Invoke("Finished", 5); 
+                Invoke("Finished", 5);
             }
             else
             {
@@ -130,23 +134,10 @@ namespace Tesco.Level_Stuff {
             // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
                 m_InHole.Clear();
-                // TODO: Update leaderboard
-                
-                // NOTE: WE HAVE A METHOD FOR THIS WHY DID YOU COPY IT DOWN HERE
-                if (m_CurrentHole.GetNext() == null)
-                {
-                    //Course ends
-                    //Display leaderboard for the course
-                    Debug.LogWarning("Course finished!");
-                    m_IgnoreUpdate = true;
-                    Invoke("Finished", 5);
-                }
-                else
-                {
-                    m_CurrentHole = m_CurrentHole.GetNext();
-                    m_CurrentHole.SpawnBalls(m_Players);
-                    EventManager.ResetBalls();
-                }
+
+                Debug.LogWarning("Hole finished!");
+                m_IgnoreUpdate = true;
+                AttemptHoleSwitch();
             }
         }
 
@@ -159,8 +150,7 @@ namespace Tesco.Level_Stuff {
         }
 
         private void Finished() {
-            // NOTE: PLEASE
-//            GameManager.Instance.SwitchLevel(LevelType.MainMenu);
+            m_GameManager.SwitchLevel(LevelType.MainMenu);
         }
 
         // Spawn a given number of players.
@@ -177,7 +167,7 @@ namespace Tesco.Level_Stuff {
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
 
-                // Commented out because this breaks many things
+                // TODO: Parent this to a spawner object, because otherwise this causes issues
                 //player.transform.parent = transform;
             }
 
@@ -203,7 +193,7 @@ namespace Tesco.Level_Stuff {
                     if(!m_PlayerScores.TryGetValue(player, out strokes)) {
                         continue;
                     }
-                    // NOTE: this doesn't... do anything?? Not sure if this is meant to update the player's scores
+                    // NOTE: this doesn't... do anything?? Not sure if this is meant to update the player's scores, but we never set it back...
                     strokes += m_CurrentHole.GetStrokes();
                 }
                 m_IgnoreUpdate = true;

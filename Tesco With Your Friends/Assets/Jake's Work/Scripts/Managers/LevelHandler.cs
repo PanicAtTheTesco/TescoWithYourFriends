@@ -30,7 +30,9 @@ namespace Tesco.Managers {
                 m_LoadingScreen.SetActive(true);
             }
             m_Operations.Add(SceneManager.UnloadSceneAsync(m_Current.ToString()));
-            m_Operations.Add(SceneManager.LoadSceneAsync(newLevel.ToString(), LoadSceneMode.Additive));
+            var loadOp = SceneManager.LoadSceneAsync(newLevel.ToString(), LoadSceneMode.Additive);
+            loadOp.allowSceneActivation = true;
+            m_Operations.Add(loadOp);
             m_Current = newLevel;
 
             StartCoroutine(DoLoadCheck());

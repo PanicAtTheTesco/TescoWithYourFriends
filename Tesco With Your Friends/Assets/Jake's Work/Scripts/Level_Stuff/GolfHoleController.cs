@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
+    // Controls an entire "hole" within a course
     public class GolfHoleController : MonoBehaviour {
         [SerializeField] [Min(1)] [Tooltip("Time limit in seconds for this hole.")] private float m_TimeLimit = 60;
         [SerializeField] [Min(1)] [Tooltip("The amount of strokes allowed for this hole.")] private int m_Strokes = 12;

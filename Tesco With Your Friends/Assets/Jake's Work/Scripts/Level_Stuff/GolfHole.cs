@@ -3,6 +3,7 @@ using System.Collections;
 using Tesco.Managers;
 
 namespace Tesco.Level_Stuff {
+    // Script to handle collisions for the golf hole
     public class GolfHole : MonoBehaviour {
 
         private void OnTriggerEnter(Collider other) {
