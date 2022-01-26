@@ -41,8 +41,7 @@ namespace Tesco.Level_Stuff {
             CreatePlayers(1);
         }
 
-        // Try to switch to the next hole
-        // NOTE: Why is this attempt? It's not like it can fail?
+        // Switch to the next hole, or to the next course if done
         private void AttemptHoleSwitch() {
             if (m_CurrentHole.GetNext() == null) {
                 // If there's no hole in the current course after this one, switch scenes
@@ -167,8 +166,9 @@ namespace Tesco.Level_Stuff {
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
 
-                // TODO: Parent this to a spawner object, because otherwise this causes issues
-                //player.transform.parent = transform;
+                // Parent ball to an object in the scene
+                var container = GameObject.FindGameObjectWithTag("PlayerContainer");
+                player.transform.parent = container.transform;
             }
 
             // Position all the players according to the current hole's start position

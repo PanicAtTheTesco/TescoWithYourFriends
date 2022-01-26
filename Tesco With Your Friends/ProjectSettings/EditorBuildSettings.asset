@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Jake's Work/Scenes/Managers.unity
+    path: Assets/Scenes/GameStart.unity
     guid: 4dad9274d37c6a244a33944c19a181e4
   - enabled: 1
-    path: Assets/Jake's Work/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 471f132e53cea284c8d33ab7350104c2
   - enabled: 1
-    path: Assets/Jake's Work/Scenes/JakesTest.unity
+    path: Assets/Scenes/Levels/Level_JakeTest.unity
     guid: cde72a481b92d024aafbd8f41ec52c75
   - enabled: 1
     path: Assets/Scenes/Levels/Level_01.unity

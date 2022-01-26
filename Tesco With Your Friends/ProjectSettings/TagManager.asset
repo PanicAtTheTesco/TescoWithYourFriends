@@ -8,6 +8,7 @@ TagManager:
   - DeathBox
   - WindZone
   - GameManager
+  - PlayerContainer
   layers:
   - Default
   - TransparentFX
