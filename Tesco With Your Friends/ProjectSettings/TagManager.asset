@@ -7,6 +7,7 @@ TagManager:
   - Hole
   - DeathBox
   - WindZone
+  - GameManager
   layers:
   - Default
   - TransparentFX

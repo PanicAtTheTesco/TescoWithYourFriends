@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// TODO: remove this at some point
 public class HoleScript : MonoBehaviour
 {
-    public AudioSource audioSource;
+    AudioSource audioSource;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Hole")
         {
             Debug.Log("Win");
             audioSource.Play();
-            SceneManager.LoadScene("Level_01");
         }
     }
 
