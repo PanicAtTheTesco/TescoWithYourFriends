@@ -7,7 +7,7 @@ namespace Tesco.Managers {
 
     public enum LevelType { //Name of scenes to change to.
         MainMenu,
-        JakesTest,
+        Level_JakeTest,
         Level_01,
     }
 

@@ -12,7 +12,7 @@ namespace Tesco.UI {
         Quit //Quit the application
     }
     public class MenuButton : MonoBehaviour, IPointerClickHandler {
-        private Tesco.Managers.GameManager m_GameManager;
+        private GameManager m_GameManager;
 
         [InspectorName("Menu Type")] [SerializeField] private MenuButtonType m_Type;
 
@@ -25,7 +25,7 @@ namespace Tesco.UI {
 
         private void Awake()
         {
-            m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<Tesco.Managers.GameManager>();
+            m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         }
 
         public void OnPointerClick(PointerEventData eventData) {
