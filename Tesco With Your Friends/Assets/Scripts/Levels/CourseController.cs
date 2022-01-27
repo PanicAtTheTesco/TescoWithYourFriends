@@ -141,6 +141,7 @@ namespace Tesco.Level_Stuff {
 
             //player.gameObject.SetActive(false); //Temp measure
             player.SetIgnore(true);
+            player.GetComponent<Rigidbody>().isKinematic = true;
 
             // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
