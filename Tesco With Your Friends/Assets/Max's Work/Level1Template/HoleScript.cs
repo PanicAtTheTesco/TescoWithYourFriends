@@ -13,7 +13,7 @@ public class HoleScript : MonoBehaviour
         if (other.tag == "Hole")
         {
             Debug.Log("Win");
-            audioSource.Play();
+//            audioSource.Play();
         }
     }
 
