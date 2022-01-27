@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tesco.Managers;
 
 public class Camera : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class Camera : MonoBehaviour
     private float angleY;
     private float radius = 10;
 
+    private void Awake() {
+        EventManager.changePlayerTurnEvent += OnTurnChange;
+    }
+
     private void Update()
     {
+        if(player == null) {
+            return;
+        }
         if (Input.GetMouseButton(0))
         {
           
@@ -45,6 +53,8 @@ public class Camera : MonoBehaviour
     }
    
 
-
+    private void OnTurnChange(Movement newPlayer) {
+        player = newPlayer.gameObject;
+    }
 
 }

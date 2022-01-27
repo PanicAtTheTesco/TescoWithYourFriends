@@ -33,6 +33,9 @@ public class Movement : MonoBehaviour
     private bool m_hasPlayer = false;
     private bool m_IgnoreUpdates; //Used to tell the script to just skip over the code in the if statement if the IgnoreUpdates value is true, mostly used it to make sure I don't spam tf out of events
     private CourseController m_Course;
+    private bool m_MyTurn = false;
+    [SerializeField] private GameObject m_Camera; //Used to disable the camera when it isn't their turn.
+    [SerializeField] private GameObject m_UI;
 
     [SerializeField] private TextMeshProUGUI m_TimeText;
     public Vector3 m_PrevPosition { get; private set; }
@@ -42,12 +45,20 @@ public class Movement : MonoBehaviour
     {
         mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
-        EventManager.resetBallsEvent += OnResetBall;
+        
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
+    }
+
+    private void Awake() {
+        EventManager.resetBallsEvent += OnResetBall;
+        EventManager.changePlayerTurnEvent += OnTurnChange;
     }
 
     public void ValueChangeCheck()
     {
+        if (!m_MyTurn) {
+            return;
+        }
         Moving = true;
 
         if (!m_IgnoreUpdates && rb.velocity == stopped)
@@ -62,9 +73,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity == stopped && !m_IgnoreUpdates) {
-            EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
+        FormatTime();
+        if (!m_MyTurn) { //Force the player to not do anything when it isn't their turn.
+            return;
         }
+        //if(rb.velocity == stopped && !m_IgnoreUpdates) {
+        //    EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
+        //}
         
         if (Input.GetKey(KeyCode.Q))
         {
@@ -97,9 +112,10 @@ public class Movement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             Moving = false;
+            EventManager.CheckStrokes(this);
         }
 
-        FormatTime();
+        
     }
 
     private void FormatTime() {// Keep this method, used for formatting the time for the UI.
@@ -138,5 +154,12 @@ public class Movement : MonoBehaviour
     public void OnResetBall() { //Keep this, this resets the ball when the event is fired when they move to another hole.
         rb.velocity = Vector3.zero;
         m_IgnoreUpdates = false;
+    }
+
+    private void OnTurnChange(Movement player) {
+        print(player == this);
+        m_MyTurn = player == this;
+        m_UI.SetActive(player == this);
+        
     }
 }

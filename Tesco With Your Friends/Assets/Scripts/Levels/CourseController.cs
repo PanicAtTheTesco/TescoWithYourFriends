@@ -38,7 +38,7 @@ namespace Tesco.Level_Stuff {
 
         // Starts a something (course? hole?)
         private void Start() {
-            CreatePlayers(1);
+            CreatePlayers(2);
         }
 
         // Switch to the next hole, or to the next course if done
@@ -76,6 +76,14 @@ namespace Tesco.Level_Stuff {
             if(strokes >= m_CurrentHole.GetStrokes()) {
                 EventManager.StrokeOut(player);
             }
+            int ind = m_Players.IndexOf(player);
+            if(ind == m_Players.Count - 1) {
+                ind = 0;
+            }
+            else {
+                ind = ind + 1;
+            }
+            EventManager.ChangeTurn(m_Players[ind]);
         }
 
         // Set the current hole and reset some (NOTE: but not all???) of the current hole state
@@ -130,7 +138,7 @@ namespace Tesco.Level_Stuff {
             //player.gameObject.SetActive(false); //Temp measure
             player.SetIgnore(true);
 
-            // If everyone is in the hold, move to the next hole/course
+            // If everyone is in the hole, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
                 m_InHole.Clear();
 
@@ -165,12 +173,12 @@ namespace Tesco.Level_Stuff {
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
-
                 // Parent ball to an object in the scene
                 var container = GameObject.FindGameObjectWithTag("PlayerContainer");
                 player.transform.parent = container.transform;
+                
             }
-
+            EventManager.ChangeTurn(m_Players[0]);
             // Position all the players according to the current hole's start position
             m_CurrentHole.SpawnBalls(m_Players);
         }

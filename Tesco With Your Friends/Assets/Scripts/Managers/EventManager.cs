@@ -16,14 +16,14 @@ namespace Tesco.Managers {
         public static Action<Movement> checkStrokeCountEvent;
         public static Action<Movement> changePlayerTurnEvent;
 
-        // Fired when ???????
+        // Fired when the player's strokes exceed the current hole's amount. (Fired in CourseController)
         public static void StrokeOut(Movement movement) {
             if(ballStrokedOutEvent != null) {
                 ballStrokedOutEvent.Invoke(movement);
             }
         }
 
-        // Fired when a turn ends and the current player changes (???)
+        // Fired when the current player's ball stops moving to tell the next player it's their turn.
         public static void ChangeTurn(Movement player)
         {
             if(changePlayerTurnEvent != null)
