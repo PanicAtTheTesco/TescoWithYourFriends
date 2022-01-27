@@ -12,6 +12,7 @@ namespace Tesco.Level_Stuff {
         private GameManager m_GameManager;
 
         [SerializeField] private GameObject m_GolfBallPrefab; // Prefab of the golf ball to spawn for each player
+        [SerializeField] private GameObject m_CourseFreeCamera; // The scene's current free camera
 
         private Dictionary<Movement, int> m_PlayerScores; // The current total scores, updated after each hole
         private GolfHoleController m_CurrentHole; // The controller for the current hole
@@ -156,7 +157,7 @@ namespace Tesco.Level_Stuff {
         // TODO: turn system, ability to spawn AI players
         private void CreatePlayers(int amount) {
             for (int i = 0; i < amount; i++) {
-
+                // Create player
                 GameObject player = Instantiate(m_GolfBallPrefab);
                 Movement pMov = player.GetComponent<Movement>();
                 PlayerNumber num = (PlayerNumber)i;
@@ -165,6 +166,8 @@ namespace Tesco.Level_Stuff {
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
+
+                player.GetComponentInChildren<SwitchCamera>().FreeCam = m_CourseFreeCamera;
 
                 // Parent ball to an object in the scene
                 var container = GameObject.FindGameObjectWithTag("PlayerContainer");

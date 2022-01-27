@@ -6,6 +6,7 @@ public class SwitchCamera : MonoBehaviour
 {
     public GameObject BallCam;
     public GameObject FreeCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class SwitchCamera : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if(BallCam.active)
+            if(BallCam.activeSelf)
             {
                 BallCam.SetActive(false);
                 FreeCam.SetActive(true);
@@ -26,7 +27,7 @@ public class SwitchCamera : MonoBehaviour
             else
             {
                 BallCam.SetActive(true);
-                FreeCam.SetActive(false );
+                FreeCam.SetActive(false);
             }
         }
     }
