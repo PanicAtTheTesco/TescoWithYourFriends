@@ -43,14 +43,19 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
         ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
 
-    public void ValueChangeCheck()
+    public void OnSliderClick()
+    {
+        Hit();
+    }
+
+    public void Hit()
     {
         Moving = true;
 

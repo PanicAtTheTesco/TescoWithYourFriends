@@ -738,7 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 1
   m_WindowToClose: {fileID: 0}
-  m_SceneToSwitch: 1
+  m_SceneToSwitch: 2
   m_WindowToSwitchTo: {fileID: 0}
 --- !u!114 &1763207611
 MonoBehaviour:
