@@ -150,7 +150,7 @@ namespace Tesco.Level_Stuff {
         }
 
         private void Finished() {
-            m_GameManager.SwitchLevel(LevelType.MainMenu);
+            m_GameManager.SwitchLevel(LevelType.WinScreen);
         }
 
         // Spawn a given number of players.
