@@ -74,7 +74,6 @@ public class Movement : MonoBehaviour
             }
 
             rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
-            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             m_PrevPosition = transform.position; // Track last position for resets
             EventManager.HitBall(this); //Keep this, used for keeping track of their stroke count in CourseController.cs
         }
