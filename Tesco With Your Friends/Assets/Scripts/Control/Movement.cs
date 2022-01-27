@@ -43,14 +43,19 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
         ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
 
-    public void ValueChangeCheck()
+    public void OnSliderClick()
+    {
+        Hit();
+    }
+
+    public void Hit()
     {
         Moving = true;
 
@@ -69,7 +74,6 @@ public class Movement : MonoBehaviour
             }
 
             rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
-            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             m_PrevPosition = transform.position; // Track last position for resets
             EventManager.HitBall(this); //Keep this, used for keeping track of their stroke count in CourseController.cs
         }

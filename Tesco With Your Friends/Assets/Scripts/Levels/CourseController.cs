@@ -29,12 +29,23 @@ namespace Tesco.Level_Stuff {
             m_Players = new List<Movement>();
             m_CurrentHoleStrokes = new Dictionary<Movement, int>();
             m_Time = 0;
+
+            SceneManager.sceneLoaded += OnSceneLoad;
             
             // Register event handlers
             EventManager.ballScoreEvent += OnBallScored;
             EventManager.ballStrokedOutEvent += OnBallScored; // NOTE: why is this the same handler?
             EventManager.ballHitEvent += OnBallHit;
             EventManager.checkStrokeCountEvent += OnStrokeCheck;
+        }
+
+        private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.Equals(m_CourseFreeCamera.scene))
+            {
+                SceneManager.SetActiveScene(m_CourseFreeCamera.scene);
+                SceneManager.sceneLoaded -= OnSceneLoad;
+            }
         }
 
         // Starts a something (course? hole?)
