@@ -143,6 +143,9 @@ namespace Tesco.Level_Stuff {
             player.SetIgnore(true);
             player.GetComponent<Rigidbody>().isKinematic = true;
 
+            // Temporary - log win/loss for end screen
+            m_GameManager.WinState = strokes < m_CurrentHole.GetStrokes();
+
             // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
                 m_InHole.Clear();

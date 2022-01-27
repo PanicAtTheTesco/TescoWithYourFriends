@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 1525538156}
   - component: {fileID: 1525538155}
   - component: {fileID: 1525538159}
+  - component: {fileID: 1525538160}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -601,6 +602,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ae3983a37987b49b00b1736a024c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1525538160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525538154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34630e0ea71ce44ba6b10bca7f92e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WinLose: {fileID: 1551788710}
+  m_Score: {fileID: 1583635800}
 --- !u!1 &1542421006
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +761,7 @@ GameObject:
   - component: {fileID: 1551788711}
   - component: {fileID: 1551788710}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Win Lose Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,7 +840,7 @@ GameObject:
   - component: {fileID: 1583635801}
   - component: {fileID: 1583635800}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +898,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You had a score of *insert score here*
+  m_Text: Your score was *insert score here*
 --- !u!222 &1583635801
 CanvasRenderer:
   m_ObjectHideFlags: 0
