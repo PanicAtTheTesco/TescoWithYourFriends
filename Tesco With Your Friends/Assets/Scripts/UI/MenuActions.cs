@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Tesco.Managers;
 using UnityEngine;
 
-public class MenuButton2 : MonoBehaviour
+// Temporary to make things work
+public class MenuActions : MonoBehaviour
 {
     private GameManager m_GameManager;
 
@@ -13,12 +14,17 @@ public class MenuButton2 : MonoBehaviour
         m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    public void ShowMainMenu()
+    public void StartGame()
     {
-        m_GameManager.SwitchLevel(LevelType.MainMenu);
+        SwitchScene(LevelType.Level_01);
     }
 
-    public void SwitchScene(LevelType targetScene)
+    public void ShowMainMenu()
+    {
+        SwitchScene(LevelType.MainMenu);
+    }
+
+    private void SwitchScene(LevelType targetScene)
     {
         m_GameManager.SwitchLevel(targetScene);
     }
