@@ -12,6 +12,7 @@ namespace Tesco.Level_Stuff {
         private GameManager m_GameManager;
 
         [SerializeField] private GameObject m_GolfBallPrefab; // Prefab of the golf ball to spawn for each player
+        [SerializeField] private GameObject m_CourseFreeCamera; // The scene's current free camera
 
         private Dictionary<Movement, int> m_PlayerScores; // The current total scores, updated after each hole
         private GolfHoleController m_CurrentHole; // The controller for the current hole
@@ -28,12 +29,23 @@ namespace Tesco.Level_Stuff {
             m_Players = new List<Movement>();
             m_CurrentHoleStrokes = new Dictionary<Movement, int>();
             m_Time = 0;
+
+            SceneManager.sceneLoaded += OnSceneLoad;
             
             // Register event handlers
             EventManager.ballScoreEvent += OnBallScored;
             EventManager.ballStrokedOutEvent += OnBallScored; // NOTE: why is this the same handler?
             EventManager.ballHitEvent += OnBallHit;
             EventManager.checkStrokeCountEvent += OnStrokeCheck;
+        }
+
+        private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.Equals(m_CourseFreeCamera.scene))
+            {
+                SceneManager.SetActiveScene(m_CourseFreeCamera.scene);
+                SceneManager.sceneLoaded -= OnSceneLoad;
+            }
         }
 
         // Starts a something (course? hole?)
@@ -129,6 +141,10 @@ namespace Tesco.Level_Stuff {
 
             //player.gameObject.SetActive(false); //Temp measure
             player.SetIgnore(true);
+            player.GetComponent<Rigidbody>().isKinematic = true;
+
+            // Temporary - log win/loss for end screen
+            m_GameManager.WinState = strokes < m_CurrentHole.GetStrokes();
 
             // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
@@ -149,14 +165,14 @@ namespace Tesco.Level_Stuff {
         }
 
         private void Finished() {
-            m_GameManager.SwitchLevel(LevelType.MainMenu);
+            m_GameManager.SwitchLevel(LevelType.WinScreen);
         }
 
         // Spawn a given number of players.
         // TODO: turn system, ability to spawn AI players
         private void CreatePlayers(int amount) {
             for (int i = 0; i < amount; i++) {
-
+                // Create player
                 GameObject player = Instantiate(m_GolfBallPrefab);
                 Movement pMov = player.GetComponent<Movement>();
                 PlayerNumber num = (PlayerNumber)i;
@@ -165,6 +181,8 @@ namespace Tesco.Level_Stuff {
                 m_Players.Add(pMov);
                 m_PlayerScores.Add(pMov, 0);
                 m_CurrentHoleStrokes.Add(pMov, 0);
+
+                player.GetComponentInChildren<SwitchCamera>().FreeCam = m_CourseFreeCamera;
 
                 // Parent ball to an object in the scene
                 var container = GameObject.FindGameObjectWithTag("PlayerContainer");

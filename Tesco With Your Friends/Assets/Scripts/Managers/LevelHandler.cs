@@ -9,6 +9,7 @@ namespace Tesco.Managers {
         MainMenu,
         Level_JakeTest,
         Level_01,
+        WinScreen,
     }
 
     // Handles transitions between levels

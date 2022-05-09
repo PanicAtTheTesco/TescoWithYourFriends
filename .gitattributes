@@ -6,3 +6,6 @@ Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/External/**/*.zip f
 Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/External/**/*.png filter=lfs diff=lfs merge=lfs -text
 Models/Sign.png filter=lfs diff=lfs merge=lfs -text
 **/Models/*.png filter=lfs diff=lfs merge=lfs -text
+
+Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/Scenes/**/*.png filter=lfs diff=lfs merge=lfs -text
+Tesco[[:space:]]With[[:space:]]Your[[:space:]]Friends/Assets/Scenes/**/*.exr filter=lfs diff=lfs merge=lfs -text

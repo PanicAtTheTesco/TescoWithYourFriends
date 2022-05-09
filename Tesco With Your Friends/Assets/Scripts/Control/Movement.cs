@@ -26,6 +26,9 @@ public class Movement : MonoBehaviour
     
     public GameObject Arrow;
     public bool Moving = true;
+    public bool FireballActive = false;
+
+    public ParticleSystem ps;
 
     public Transform PlayerPos;
     public Transform startPos;
@@ -40,20 +43,37 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
+        ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
 
-    public void ValueChangeCheck()
+    public void OnSliderClick()
+    {
+        Hit();
+    }
+
+    public void Hit()
     {
         Moving = true;
 
         if (!m_IgnoreUpdates && rb.velocity == stopped)
         {
-            rb.AddForce(-transform.right * mainSlider.value);
-            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            float speedMultiplier = 1.0f;
+
+            if (FireballActive)
+            {
+                speedMultiplier = 3.0f;
+                ps.Play();
+            }
+            else
+            {
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+
+            rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
             m_PrevPosition = transform.position; // Track last position for resets
             EventManager.HitBall(this); //Keep this, used for keeping track of their stroke count in CourseController.cs
         }
@@ -85,6 +105,7 @@ public class Movement : MonoBehaviour
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
+            FireballActive = false;
         }
         if (rb.velocity != stopped)
         {

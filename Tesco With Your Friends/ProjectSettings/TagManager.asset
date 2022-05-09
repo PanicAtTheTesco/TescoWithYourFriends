@@ -9,6 +9,7 @@ TagManager:
   - WindZone
   - GameManager
   - PlayerContainer
+  - FreeCamera
   layers:
   - Default
   - TransparentFX

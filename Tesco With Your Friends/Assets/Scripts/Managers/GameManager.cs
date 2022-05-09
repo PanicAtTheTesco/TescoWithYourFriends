@@ -8,6 +8,13 @@ namespace Tesco.Managers {
         ////////////////////////////////
         [SerializeField] private LevelHandler m_Levelhandler;
 
+        public bool WinState { get; set; }
+
+        private void Awake()
+        {
+            WinState = true;
+        }
+
         // Switch to a given level
         public void SwitchLevel(LevelType level) {
             m_Levelhandler.SwitchLevel(level);
