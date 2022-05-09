@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = System.Random;
 
 
@@ -26,9 +29,16 @@ public class UI : MonoBehaviour
     
     public SortedList<int, RecordInfo> records;
 
+    public Slider slider;
+    public bool stoppedSlider;
+    public bool isSliding;
+    public int s_Speed;
+
     private void OnEnable()
     {
         toPause = false;
+        stoppedSlider = true;
+        isSliding = false;
         toShowLeaderboard = false;
         canEnablePause = true;
         
@@ -39,6 +49,7 @@ public class UI : MonoBehaviour
         
         _uiController.UI.Pause.performed += OnPauseEnabled;
         _uiController.UI.LeaderBoard.performed += OnLeaderboardEnabled;
+        _uiController.UI.SliderActivate.performed += OnSliderActivate;
     }
     private void OnDisable()
     {
@@ -183,6 +194,69 @@ public class UI : MonoBehaviour
         
         LeaderBoard_UI(toShowLeaderboard);
     }
+
+    private void OnSliderActivate(InputAction.CallbackContext obj)
+    {
+        if (stoppedSlider && !isSliding)
+        {
+            isSliding = true;
+            stoppedSlider = false;
+            StartCoroutine(SliderUpdate());
+        }
+        else if (!stoppedSlider && isSliding)
+        {
+            isSliding = false;
+        }
+    }
+
+    public float setTarget;
+
+    public IEnumerator SliderUpdate()
+    {
+        if(slider == null) yield break;
+        
+        slider.value = 0;
+        bool reached_MinLimit = true;
+        bool reached_MaxLimit = false;
+        setTarget = slider.maxValue;
+        
+        while (isSliding)
+        {
+            if (limitReached)
+            {
+                s_Speed = s_Speed * -1;
+                limitReached = false;
+            }
+
+            slider.value += s_Speed * Time.deltaTime;
+            
+            Debug.Log("Val: "+ slider.value);
+        
+            if (slider.value >= setTarget && setTarget == slider.maxValue)
+            {
+                setTarget = slider.minValue;
+                limitReached = true;
+            }
+            else if (slider.value <= setTarget && setTarget == slider.minValue)
+            {
+                setTarget = slider.maxValue;
+                limitReached = true;
+            }
+            yield return null;
+        }
+
+        limitReached = false;
+        stoppedSlider = true;
+        isSliding = false;
+        slider.value = 0;
+        reached_MinLimit = true;
+        reached_MaxLimit = false;
+        setTarget = slider.maxValue;
+
+    }
+
+    public bool limitReached;
+
     public void UpdateLeaderBoardInfo()
     {
         Leaderboard_Script l_Script = LeaderBoard.GetComponent<Leaderboard_Script>();

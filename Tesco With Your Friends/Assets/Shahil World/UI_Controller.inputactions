@@ -20,6 +20,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SliderActivate",
+                    "type": "Button",
+                    "id": "419d2826-e1c0-4edb-b4c7-a7aab9cc0223",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -42,6 +50,17 @@
                     "processors": "",
                     "groups": "UI",
                     "action": "LeaderBoard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d76d5b7-61d8-4cba-bff8-ead282ff0089",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SliderActivate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

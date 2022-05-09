@@ -33,6 +33,14 @@ public class @UI_Controller : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SliderActivate"",
+                    ""type"": ""Button"",
+                    ""id"": ""419d2826-e1c0-4edb-b4c7-a7aab9cc0223"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,17 @@ public class @UI_Controller : IInputActionCollection, IDisposable
                     ""action"": ""LeaderBoard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d76d5b7-61d8-4cba-bff8-ead282ff0089"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SliderActivate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -73,6 +92,7 @@ public class @UI_Controller : IInputActionCollection, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_LeaderBoard = m_UI.FindAction("LeaderBoard", throwIfNotFound: true);
+        m_UI_SliderActivate = m_UI.FindAction("SliderActivate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -124,12 +144,14 @@ public class @UI_Controller : IInputActionCollection, IDisposable
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Pause;
     private readonly InputAction m_UI_LeaderBoard;
+    private readonly InputAction m_UI_SliderActivate;
     public struct UIActions
     {
         private @UI_Controller m_Wrapper;
         public UIActions(@UI_Controller wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputAction @LeaderBoard => m_Wrapper.m_UI_LeaderBoard;
+        public InputAction @SliderActivate => m_Wrapper.m_UI_SliderActivate;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -145,6 +167,9 @@ public class @UI_Controller : IInputActionCollection, IDisposable
                 @LeaderBoard.started -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderBoard;
                 @LeaderBoard.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderBoard;
                 @LeaderBoard.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderBoard;
+                @SliderActivate.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSliderActivate;
+                @SliderActivate.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSliderActivate;
+                @SliderActivate.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSliderActivate;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -155,6 +180,9 @@ public class @UI_Controller : IInputActionCollection, IDisposable
                 @LeaderBoard.started += instance.OnLeaderBoard;
                 @LeaderBoard.performed += instance.OnLeaderBoard;
                 @LeaderBoard.canceled += instance.OnLeaderBoard;
+                @SliderActivate.started += instance.OnSliderActivate;
+                @SliderActivate.performed += instance.OnSliderActivate;
+                @SliderActivate.canceled += instance.OnSliderActivate;
             }
         }
     }
@@ -172,5 +200,6 @@ public class @UI_Controller : IInputActionCollection, IDisposable
     {
         void OnPause(InputAction.CallbackContext context);
         void OnLeaderBoard(InputAction.CallbackContext context);
+        void OnSliderActivate(InputAction.CallbackContext context);
     }
 }
