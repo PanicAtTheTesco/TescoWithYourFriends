@@ -28,7 +28,7 @@ public class Moving_Objects : MonoBehaviour
             while ((patrolPath = points.getPatrolPath()) == null) { yield return null; }
         }
 
-        if (pathID > patrolPath.Count) { pathID = 0;}
+        if (pathID >= patrolPath.Count) { pathID = 0;}
         
         target = patrolPath[pathID];
         StartCoroutine(Move());
