@@ -5257,6 +5257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallCam: {fileID: 1207600334}
   FreeCam: {fileID: 0}
+  CinCam: {fileID: 0}
   m_ControlUI: {fileID: 4972686707384486582}
   m_SliderUI: {fileID: 8718675743868868547}
   m_timeUI: {fileID: 1132721048434481042}

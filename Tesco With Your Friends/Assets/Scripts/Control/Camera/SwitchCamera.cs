@@ -6,6 +6,7 @@ public class SwitchCamera : MonoBehaviour
 {
     public GameObject BallCam;
     public GameObject FreeCam;
+    
 
     public GameObject m_ControlUI;
     public GameObject m_SliderUI;
@@ -22,6 +23,7 @@ public class SwitchCamera : MonoBehaviour
         m_inCinCamera = true;
 
         BallCam.SetActive(false);
+       
         FreeCam.SetActive(true);
 
         m_ControlUI.SetActive(false);
@@ -40,6 +42,7 @@ public class SwitchCamera : MonoBehaviour
         {
             BallCam.SetActive(true);
             FreeCam.SetActive(false);
+        
 
             m_ControlUI.SetActive(true);
             m_SliderUI.SetActive(true);
@@ -53,6 +56,7 @@ public class SwitchCamera : MonoBehaviour
         {
             BallCam.SetActive(true);
             FreeCam.SetActive(false);
+            
 
             m_ControlUI.SetActive(true);
             m_SliderUI.SetActive(true);
@@ -71,11 +75,15 @@ public class SwitchCamera : MonoBehaviour
             {
                 BallCam.SetActive(false);
                 FreeCam.SetActive(true);
+                m_ControlUI.SetActive(false);
+                m_SliderUI.SetActive(false);
+                m_timeUI.SetActive(false);
             }
             else
             {
                 BallCam.SetActive(true);
                 FreeCam.SetActive(false);
+                
             }
         }
     }
