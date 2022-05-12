@@ -20,8 +20,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shahil World/Powerups/StickyLiquidTrail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shahil World/Powerups/BananaPeel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/46/30d919b0/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7F0A900-FDF9-4A2A-9316-BB3D4C5AA3E8/6f/ac8a9c06/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shahil World/Test_Player_Script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shahil World/Powerups/Powerups.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -32,6 +36,10 @@
       <option value="$PROJECT_DIR$/Assets/Shahil World/getPoints.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Moving_Objects.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/ObjectMove/Moving_Objects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Powerups/Powerups.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Powerups/BananaPeel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Test_Player_Script.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Powerups/StickyLiquidTrail.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="28vu3dm8qRZ00z2bNSrkE1FT8FR" />
@@ -84,7 +92,7 @@
       <workItem from="1652109189026" duration="5720000" />
       <workItem from="1652116475089" duration="13113000" />
       <workItem from="1652347818203" duration="2871000" />
-      <workItem from="1652350733165" duration="345000" />
+      <workItem from="1652350733165" duration="8654000" />
     </task>
     <servers />
   </component>
