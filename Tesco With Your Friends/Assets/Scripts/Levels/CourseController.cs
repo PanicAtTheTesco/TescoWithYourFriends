@@ -13,6 +13,7 @@ namespace Tesco.Level_Stuff {
 
         [SerializeField] private GameObject m_GolfBallPrefab; // Prefab of the golf ball to spawn for each player
         [SerializeField] private GameObject m_CourseFreeCamera; // The scene's current free camera
+        public LevelType m_NextScene;
 
         private Dictionary<Movement, int> m_PlayerScores; // The current total scores, updated after each hole
         private GolfHoleController m_CurrentHole; // The controller for the current hole
@@ -165,7 +166,7 @@ namespace Tesco.Level_Stuff {
         }
 
         private void Finished() {
-            m_GameManager.SwitchLevel(LevelType.WinScreen);
+            m_GameManager.SwitchLevel(m_NextScene);
         }
 
         // Spawn a given number of players.

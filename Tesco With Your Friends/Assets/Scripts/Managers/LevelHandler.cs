@@ -9,6 +9,8 @@ namespace Tesco.Managers {
         MainMenu,
         Level_JakeTest,
         Level_01,
+        // TODO add this
+        Level_02,
         WinScreen,
     }
 
