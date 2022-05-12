@@ -40,15 +40,75 @@ public class Movement : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_TimeText;
     public Vector3 m_PrevPosition { get; private set; }
 
+
+
+    //powerBar
+    public Image PowerBarMask;
+    public Slider PowerSlider;
+    float barChangeSpeed = 2;
+    float MaxPowerBar = 50;
+    public float m_CurrentPowerBar;
+    bool m_powerIsIncreasing;
+    bool powerBarOn;
+
+
+    float yangle = 0;
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
+        //slider
+        //mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
+        Moving = false;
+
+        //power indicator
+        m_CurrentPowerBar = 0;
+        m_powerIsIncreasing = true;
+        powerBarOn = true;
+        StartCoroutine(UpdatePowerBar());
+
         ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
+
+    IEnumerator UpdatePowerBar()
+    {
+        while (powerBarOn)
+        {
+
+            if (!m_powerIsIncreasing)
+            {
+                m_CurrentPowerBar -= barChangeSpeed;
+                if (m_CurrentPowerBar <= 0)
+                {
+                    m_powerIsIncreasing = true;
+                }
+            }
+            if (m_powerIsIncreasing)
+            {
+                m_CurrentPowerBar += barChangeSpeed;
+                if (m_CurrentPowerBar >= MaxPowerBar)
+                {
+                    m_powerIsIncreasing = false;
+                }
+            }
+
+
+
+
+            //float fill = m_CurrentPowerBar / MaxPowerBar;
+            //PowerBarMask.fillAmount = fill;
+            PowerSlider.value = m_CurrentPowerBar;
+
+            yield return new WaitForSeconds(0.02f);
+        }
+        yield return null;
+    }
+
+
 
     public void OnSliderClick()
     {
@@ -73,7 +133,11 @@ public class Movement : MonoBehaviour
                 ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             }
 
-            rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
+            //slider
+            //rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
+
+            rb.velocity = -transform.right * PowerSlider.value;
+
             m_PrevPosition = transform.position; // Track last position for resets
             EventManager.HitBall(this); //Keep this, used for keeping track of their stroke count in CourseController.cs
         }
@@ -82,17 +146,26 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity == stopped && !m_IgnoreUpdates) {
+        if (rb.velocity == stopped && !m_IgnoreUpdates)
+        {
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
-        
+
+
+
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+            //transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+
+            yangle -= 0.3f;
+            transform.eulerAngles = new Vector3(0, yangle, 0);
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(Vector3.up * speed * Time.deltaTime);
+            //transform.Rotate(Vector3.up * speed * Time.deltaTime);
+
+            yangle += 0.3f;
+            transform.eulerAngles = new Vector3(0, yangle, 0);
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -106,19 +179,42 @@ public class Movement : MonoBehaviour
         {
             Arrow.SetActive(true);
             FireballActive = false;
+
+           
+
         }
         if (rb.velocity != stopped)
         {
+            //slider
             mainSlider.value = 50.0f;
+
+
             Arrow.SetActive(false);
         }
-        if (Moving && (rb.velocity.magnitude < 0.4f))
+        if (Moving && (rb.velocity.magnitude < 0.5f))
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             Moving = false;
+
+            powerBarOn = true;
+            
+            StartCoroutine(UpdatePowerBar());
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            powerBarOn = false;
+            Hit();
+            
+            
+            StopCoroutine(UpdatePowerBar());
+
+
+
+        }
+        
 
         FormatTime();
     }
