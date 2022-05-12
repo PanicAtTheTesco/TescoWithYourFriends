@@ -29,7 +29,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Record_Script.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Leaderboard_Script.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/UI.cs" />
@@ -40,6 +39,10 @@
       <option value="$PROJECT_DIR$/Assets/Shahil World/Powerups/BananaPeel.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Test_Player_Script.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Powerups/StickyLiquidTrail.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/Movement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Levels/CourseController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Trajectory/ProjectileTrajectory.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="28vu3dm8qRZ00z2bNSrkE1FT8FR" />
@@ -92,7 +95,7 @@
       <workItem from="1652109189026" duration="5720000" />
       <workItem from="1652116475089" duration="13113000" />
       <workItem from="1652347818203" duration="2871000" />
-      <workItem from="1652350733165" duration="8654000" />
+      <workItem from="1652350733165" duration="17777000" />
     </task>
     <servers />
   </component>
@@ -103,5 +106,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Levels/CourseController.cs</url>
+          <line>123</line>
+          <properties documentPath="F:\Assignment Repos\Panic\TescoWithYourFriends\Tesco With Your Friends\Assets\Scripts\Levels\CourseController.cs" initialLine="112" containingFunctionPresentation="method 'OnBallScored'">
+            <startOffsets>
+              <option value="5307" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5308" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

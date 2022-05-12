@@ -9,7 +9,6 @@ namespace Tesco.Managers {
         [SerializeField] private LevelHandler m_Levelhandler;
         
         public bool WinState { get; set; }
-
         private void Awake()
         {
             WinState = true;

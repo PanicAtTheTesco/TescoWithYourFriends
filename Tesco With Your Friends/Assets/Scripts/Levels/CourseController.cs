@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Tesco.Managers;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 namespace Tesco.Level_Stuff {
 
@@ -22,6 +24,11 @@ namespace Tesco.Level_Stuff {
         private bool m_IgnoreUpdate = false; // NOTE: I have no idea what this does, seems to track whether we've already started transitioning to the next hole
         private Dictionary<Movement, int> m_CurrentHoleStrokes; //Used to keep track of the strokes for the current hole, gets added onto m_PlayerScores once the OnBallScored method is fired
 
+        public CanvasGroup ScoreBoard;
+        public float scoreboard_Duration;
+        public bool displayScoreBoard;
+
+        
         private void Awake() {
             m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
             m_PlayerScores = new Dictionary<Movement, int>();
@@ -30,6 +37,8 @@ namespace Tesco.Level_Stuff {
             m_CurrentHoleStrokes = new Dictionary<Movement, int>();
             m_Time = 0;
 
+            ScoreBoard.gameObject.SetActive(false);
+            displayScoreBoard = false;
             SceneManager.sceneLoaded += OnSceneLoad;
             
             // Register event handlers
@@ -58,7 +67,8 @@ namespace Tesco.Level_Stuff {
             if (m_CurrentHole.GetNext() == null) {
                 // If there's no hole in the current course after this one, switch scenes
                 // TODO: show current scores on leaderboard before switching levels
-                Invoke("Finished", 5);
+                Invoke("Finished", 0);
+                displayScoreBoard = false;
             }
             else
             {
@@ -110,6 +120,7 @@ namespace Tesco.Level_Stuff {
         }
 
         // Handle when the player scores, add their scores from current hole to running total
+        /*
         private void OnBallScored(Movement player) {
             // Get their score for the hole
             PlayerNumber num = player.m_Player;
@@ -154,6 +165,66 @@ namespace Tesco.Level_Stuff {
                 m_IgnoreUpdate = true;
                 AttemptHoleSwitch();
             }
+        }
+        */
+        private void OnBallScored(Movement player)
+        {
+            StartCoroutine(AfterPlayerScored(player));
+        }
+
+        private IEnumerator AfterPlayerScored(Movement player)
+        {
+            PlayerNumber num = player.m_Player;
+            int strokes = 0;
+            if(!m_CurrentHoleStrokes.TryGetValue(player, out strokes)) {
+                Debug.LogWarning("[ERROR]: Player doesn't exist in the CurrentHoleStrokes dictionary!");
+                AttemptHoleSwitch(); // NOTE: WHY WOULD YOU DO THAT HERE?
+                yield return null;
+            }
+
+            // Add score from this hole to their running total
+            if (!m_PlayerScores.ContainsKey(player))
+            {
+                m_PlayerScores.Add(player, strokes);
+            }
+            else
+            {
+                int pStr;
+                if (m_PlayerScores.TryGetValue(player, out pStr)) {
+                    pStr += strokes;
+
+                    m_PlayerScores[player] = pStr;
+                }
+            }
+            print(m_PlayerScores[player]);
+
+            // Track that they're in the hole
+            m_InHole.Add(player);
+
+            player.SetIgnore(true);
+            player.GetComponent<Rigidbody>().isKinematic = true;
+
+            // Temporary - log win/loss for end screen
+            m_GameManager.WinState = strokes < m_CurrentHole.GetStrokes();
+
+            // If everyone is in the hold, move to the next hole/course
+            if (m_InHole.Count >= m_PlayerScores.Count) {
+                m_InHole.Clear();
+
+                Debug.LogWarning("Hole finished!");
+                m_IgnoreUpdate = true;
+                
+                // Score Board
+                displayScoreBoard = true;
+                ScoreBoard.gameObject.SetActive(true);
+                yield return new WaitForSeconds(scoreboard_Duration);
+
+                ScoreBoard.gameObject.SetActive(false);
+
+                AttemptHoleSwitch();
+
+            }
+
         }
 
         public float GetTimeLimit() {

@@ -85,23 +85,30 @@ public class Movement : MonoBehaviour
         if(rb.velocity == stopped && !m_IgnoreUpdates) {
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
-        
-        if (Input.GetKey(KeyCode.Q))
+
+        if (!m_Course.displayScoreBoard)
         {
-            transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.Q))
+            {
+                transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.Rotate(Vector3.up * speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Rotate(Vector3.back * speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Rotate(-Vector3.back * speed * Time.deltaTime);
+            }
         }
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(Vector3.up * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Rotate(Vector3.back * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Rotate(-Vector3.back * speed * Time.deltaTime);
-        }
+
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
