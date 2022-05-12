@@ -25,6 +25,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shahil World/UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shahil World/Record_Script.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/46/30d919b0/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7F0A900-FDF9-4A2A-9316-BB3D4C5AA3E8/6f/ac8a9c06/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -32,6 +33,9 @@
       <option value="$PROJECT_DIR$/Assets/Shahil World/Record_Script.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/Leaderboard_Script.cs" />
       <option value="$PROJECT_DIR$/Assets/Shahil World/UI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/getPoints.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/Moving_Objects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shahil World/ObjectMove/Moving_Objects.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="28vu3dm8qRZ00z2bNSrkE1FT8FR" />
@@ -62,10 +66,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12148">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12148" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -83,6 +87,7 @@
       <updated>1652109185664</updated>
       <workItem from="1652109189026" duration="5720000" />
       <workItem from="1652116475089" duration="13113000" />
+      <workItem from="1652347818203" duration="2871000" />
     </task>
     <servers />
   </component>
