@@ -1,9 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Collectible : MonoBehaviour
 {
+    public enum Type
+    {
+        GENERIC,
+        // Powerups
+        BANANA,
+        FIREBALL,
+        JUMP,
+        // Disadvantages
+        STICKY,
+        STOPWATCH,
+    }
+    
     [SerializeField]
     public GameObject floatPrefab;
     [SerializeField]
@@ -15,6 +29,8 @@ public class Collectible : MonoBehaviour
     [SerializeField]
     public float floatAscendMultiplier;
 
+    [SerializeField] public Type type;
+    
     private GameObject floatSpawned;
     
     // Start is called before the first frame update
@@ -40,6 +56,14 @@ public class Collectible : MonoBehaviour
 
             Vector3 rotation = floatRotateSpeed * Time.deltaTime;
             floatSpawned.transform.Rotate(rotation);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // TODO: activate effect
         }
     }
 }
