@@ -38,6 +38,8 @@ public class Movement : MonoBehaviour
     private CourseController m_Course;
 
     [SerializeField] private TextMeshProUGUI m_TimeText;
+    [SerializeField] private TextMeshProUGUI m_StrokeText;
+
     public Vector3 m_PrevPosition { get; private set; }
 
 
@@ -71,7 +73,8 @@ public class Movement : MonoBehaviour
         ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
-        // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
+        EventManager.pickupCollectedEvent += OnPickupCollected;
+        // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually (lol as if)
     }
 
     IEnumerator UpdatePowerBar()
@@ -136,7 +139,7 @@ public class Movement : MonoBehaviour
             //slider
             //rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
 
-            rb.velocity = -transform.right * PowerSlider.value;
+            rb.velocity = -transform.right * PowerSlider.value * speedMultiplier;
 
             m_PrevPosition = transform.position; // Track last position for resets
             EventManager.HitBall(this); //Keep this, used for keeping track of their stroke count in CourseController.cs
@@ -151,37 +154,32 @@ public class Movement : MonoBehaviour
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
 
-
-
         if (Input.GetKey(KeyCode.Q))
         {
-            //transform.Rotate(-Vector3.up * speed * Time.deltaTime);
-
             yangle -= 0.3f;
             transform.eulerAngles = new Vector3(0, yangle, 0);
         }
+
         if (Input.GetKey(KeyCode.E))
         {
-            //transform.Rotate(Vector3.up * speed * Time.deltaTime);
-
             yangle += 0.3f;
             transform.eulerAngles = new Vector3(0, yangle, 0);
         }
+        
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.back * speed * Time.deltaTime);
         }
+        
         if (Input.GetKey(KeyCode.S))
         {
             transform.Rotate(-Vector3.back * speed * Time.deltaTime);
         }
+        
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
             FireballActive = false;
-
-           
-
         }
         if (rb.velocity != stopped)
         {
@@ -191,7 +189,8 @@ public class Movement : MonoBehaviour
 
             Arrow.SetActive(false);
         }
-        if (Moving && (rb.velocity.magnitude < 0.5f))
+        
+        if (Moving && (rb.velocity.magnitude < 0.3f))
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -208,24 +207,42 @@ public class Movement : MonoBehaviour
             powerBarOn = false;
             Hit();
             
-            
             StopCoroutine(UpdatePowerBar());
-
-
-
         }
         
 
-        FormatTime();
+        UpdateTime();
+        UpdateStrokes();
     }
 
-    private void FormatTime() {// Keep this method, used for formatting the time for the UI.
+    // Update the time remaining counter
+    private void UpdateTime() {
         float limit = m_Course.GetTimeLimit();
         float nTime = limit - m_Course.m_Time;
         string mins = Mathf.Floor(nTime / 60).ToString("00");
         string secs = Mathf.Floor(nTime % 60).ToString("00");
-        
+
         m_TimeText.SetText(string.Format("{0}:{1}", mins, secs));
+        
+        // Turn red for last 30 seconds
+        if (nTime <= 30)
+        {
+            m_TimeText.color = Color.red;
+        }
+    }
+
+    // Update the time remaining counter
+    private void UpdateStrokes()
+    {
+        float nStrokes = m_Course.GetPlayerHoleStrokes(this);
+        float limit = m_Course.GetStrokeLimit();
+        m_StrokeText.SetText(string.Format("Strokes: {0}/{1}", nStrokes, limit));
+        
+        // Turn red for last 3 strokes
+        if (limit - nStrokes <= 3)
+        {
+            m_TimeText.color = Color.red;
+        }
     }
 
     private void OnDisable() {//Keep this, used for clearing the event subcription when the ball gets disabled
@@ -255,5 +272,13 @@ public class Movement : MonoBehaviour
     public void OnResetBall() { //Keep this, this resets the ball when the event is fired when they move to another hole.
         rb.velocity = Vector3.zero;
         m_IgnoreUpdates = false;
+    }
+
+    private void OnPickupCollected(Collectible pickup)
+    {
+        if (pickup.PickupType == Collectible.Type.FIREBALL)
+        {
+            FireballActive = true;
+        }
     }
 }

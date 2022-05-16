@@ -165,6 +165,18 @@ namespace Tesco.Level_Stuff {
             return m_CurrentHole.GetStrokes();
         }
 
+        // Get the player's strokes for the entire course
+        public int GetPlayerCourseStrokes(Movement player)
+        {
+            return m_PlayerScores.ContainsKey(player) ? m_PlayerScores[player] : -1;
+        }
+
+        // Get the players strokes for this hole
+        public int GetPlayerHoleStrokes(Movement player)
+        {
+            return m_CurrentHoleStrokes.ContainsKey(player) ? m_CurrentHoleStrokes[player] : -1;
+        }
+
         private void Finished() {
             m_GameManager.SwitchLevel(m_NextScene);
         }
