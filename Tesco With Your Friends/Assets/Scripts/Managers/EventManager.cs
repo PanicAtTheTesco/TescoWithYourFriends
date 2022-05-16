@@ -15,49 +15,48 @@ namespace Tesco.Managers {
         public static Action<Movement> ballHitEvent;
         public static Action<Movement> checkStrokeCountEvent;
         public static Action<Movement> changePlayerTurnEvent;
+        public static Action<Collectible> pickupCollectedEvent;
 
-        // Fired when ???????
-        public static void StrokeOut(Movement movement) {
-            if(ballStrokedOutEvent != null) {
-                ballStrokedOutEvent.Invoke(movement);
-            }
+        // Fired when player has reached stroke limit for course
+        public static void StrokeOut(Movement movement)
+        {
+            ballStrokedOutEvent?.Invoke(movement);
         }
 
         // Fired when a turn ends and the current player changes (???)
         public static void ChangeTurn(Movement player)
         {
-            if(changePlayerTurnEvent != null)
-            {
-                changePlayerTurnEvent.Invoke(player);
-            }
+            changePlayerTurnEvent?.Invoke(player);
         }
 
         // Fired when the ball stops moving after a hit
-        public static void CheckStrokes(Movement movement) {
-            if(checkStrokeCountEvent != null) {
-                checkStrokeCountEvent.Invoke(movement);
-            }
+        public static void CheckStrokes(Movement movement)
+        {
+            checkStrokeCountEvent?.Invoke(movement);
         }
 
         // Fired when the ball is hit
-        public static void HitBall(Movement movement) {
-            if(ballHitEvent != null) {
-                ballHitEvent.Invoke(movement);
-            }
+        public static void HitBall(Movement movement)
+        {
+            ballHitEvent?.Invoke(movement);
         }
 
-        // Fired when the ball should be reset during a same-course hole transition
-        public static void ResetBalls() {
-            if(resetBallsEvent != null) {
-                resetBallsEvent.Invoke();
-            }
+        // Fired when the ball should be reset when moving to a new hold on the same course
+        public static void ResetBalls()
+        {
+            resetBallsEvent?.Invoke();
         }
 
         // Fired when a player lands a ball in the hole
-        public static void BallScored(Movement move) {
-            if(ballScoreEvent != null) {
-                ballScoreEvent.Invoke(move);
-            }
+        public static void BallScored(Movement move)
+        {
+            ballScoreEvent?.Invoke(move);
+        }
+        
+        // Fired when a player collects a pickup
+        public static void PickupCollected(Collectible collectible)
+        {
+            pickupCollectedEvent?.Invoke(collectible);
         }
     }
 }

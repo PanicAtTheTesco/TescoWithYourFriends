@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Tesco.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,23 +20,29 @@ public class Collectible : MonoBehaviour
     }
     
     [SerializeField]
-    public GameObject floatPrefab;
+    private GameObject floatPrefab;
     [SerializeField]
-    public Vector3 floatScale;
+    private Vector3 floatScale;
     [SerializeField]
-    public Vector3 floatRotateSpeed;
+    private Vector3 floatRotateSpeed;
     [SerializeField]
-    public AnimationCurve floatAscendCurve;
+    private AnimationCurve floatAscendCurve;
     [SerializeField]
-    public float floatAscendMultiplier;
-
-    [SerializeField] public Type type;
+    private float floatAscendMultiplier;
+    [SerializeField]
+    private Type type;
     
     private GameObject floatSpawned;
-    
+    private bool active = false;
+    private ParticleSystem pSystem;
+
+    public Type PickupType => type;
+
     // Start is called before the first frame update
     void Start()
     {
+        pSystem = GetComponent<ParticleSystem>();
+
         floatAscendCurve.preWrapMode = WrapMode.PingPong;
         floatAscendCurve.postWrapMode = WrapMode.PingPong;
         // Randomised multiplier so items aren't perfectly in sync
@@ -43,13 +50,36 @@ public class Collectible : MonoBehaviour
         
         floatSpawned = Instantiate(floatPrefab, transform);
         floatSpawned.transform.localScale = floatScale;
+        
+        active = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (floatSpawned != null)
+        if (pSystem != null)
         {
+            // Enable/disable particles according to whether pickup is active
+            switch (active)
+            {
+                case true when pSystem.isStopped:
+                    pSystem.Play();
+                    break;
+                case false when pSystem.isPlaying:
+                    pSystem.Stop();
+                    break;
+            }
+        }
+
+        // Animate the floating object if it exists
+        if (active && floatSpawned != null)
+        {
+            // Set floating object to visible/hidden (TODO: transparency?)
+            if (active != floatSpawned.activeSelf)
+            {
+                floatSpawned.SetActive(active);
+            }
+            
             Vector3 pos = floatSpawned.transform.localPosition;
             pos.y = floatAscendCurve.Evaluate(Time.time * floatAscendMultiplier);
             floatSpawned.transform.localPosition = pos;
@@ -61,9 +91,11 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (active && other.CompareTag("Player"))
         {
-            // TODO: activate effect
+            EventManager.PickupCollected(this);
+            // TODO: reactivate after X amount of time (one round?)
+            active = false;
         }
     }
 }
