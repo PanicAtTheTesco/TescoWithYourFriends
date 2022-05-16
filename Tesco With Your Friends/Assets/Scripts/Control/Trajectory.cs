@@ -15,6 +15,7 @@ public class Trajectory : MonoBehaviour
     public AnimationCurve lineWidth;
     public GameObject shotPoint;
 
+    // TODO: move to Movement
     [Space(5)] [Header("Clamp Vars")]
     public float minClamp;
     public float maxClamp;
@@ -35,35 +36,14 @@ public class Trajectory : MonoBehaviour
 
     private void Update()
     {
-        //NOTE: This input part needs to be removed from this script since it was implemented for the dummy object.
-        if (Input.GetKey(KeyCode.W))
-        {
-            // To Clamp the Rotation
-            shotPoint.transform.Rotate(-2.0f,0,0);
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            shotPoint.transform.Rotate(2.0f,0,0);
-        }
-
-
-        // The code below needs to go somewhere where the pointer is controlled
-
-        // Clamp Rotation starts
-        clamp_RotX = Mathf.Clamp(shotPoint.transform.eulerAngles.x, minClamp, maxClamp);
-        Vector3 clampRot = new Vector3(clamp_RotX, 0.0f, 0.0f);
-        shotPoint.transform.eulerAngles = clampRot;
-        // Clamp rotation Ends
-
         renderer.positionCount = (int)numPoints;
         List<Vector3> points = new List<Vector3>();
         Vector3 startingPosition = shotPoint.transform.position;
-        Vector3 startingVelocity = shotPoint.transform.up * vel;
+        Vector3 startingVelocity = -shotPoint.transform.right * vel;
         for (float t = 0; t < numPoints; t += timeBetweenPoints)
         {
             Vector3 newPoint = startingPosition + t * startingVelocity;
-            newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y/2f * t * t;
+            newPoint.y = startingPosition.y + (startingVelocity.y * t) + (Physics.gravity.y / 2f * t * t);
             points.Add(newPoint);
 
             if(Physics.OverlapSphere(newPoint, 2, CollidableLayers).Length > 0)
