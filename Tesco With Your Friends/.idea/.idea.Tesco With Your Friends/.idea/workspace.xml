@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23f91a12-ada0-4620-a7c2-c5c05e9c9f12" name="Default Changelist" comment="" />
+    <list default="true" id="23f91a12-ada0-4620-a7c2-c5c05e9c9f12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesco With Your Friends/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesco With Your Friends/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/Gameplay/Golf Ball Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/Gameplay/Golf Ball Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/UI/GameUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/UI/GameUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/CourseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/CourseController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +16,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/PrivateFieldSetter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/51e7ba985b03449fa807cf0c6504869c24200/73/a2c1e161/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="293gJT5ls6gExFFQ1zt2cczFMMP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,6 +72,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
