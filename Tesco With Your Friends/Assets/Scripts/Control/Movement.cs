@@ -45,17 +45,16 @@ public class Movement : MonoBehaviour
 
 
     //powerBar
-    public Image PowerBarMask;
     public Slider PowerSlider;
     float barChangeSpeed = 2;
     float MaxPowerBar = 50;
     public float m_CurrentPowerBar;
     bool m_powerIsIncreasing;
     bool powerBarOn;
-
-
     float yangle = 0;
-   
+    
+    // Whether or not this player has scored in this hole
+    private bool hasFinishedThisHole = false;
 
     // Start is called before the first frame update
     void Start()
@@ -74,14 +73,15 @@ public class Movement : MonoBehaviour
 
         EventManager.resetBallsEvent += OnResetBall;
         EventManager.pickupCollectedEvent += OnPickupCollected;
+        EventManager.ballScoreEvent += BallScoreEvent;
+        EventManager.ballStrokedOutEvent += BallStrokedOutEvent;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually (lol as if)
     }
 
     IEnumerator UpdatePowerBar()
     {
-        while (powerBarOn)
+        while (powerBarOn && !hasFinishedThisHole)
         {
-
             if (!m_powerIsIncreasing)
             {
                 m_CurrentPowerBar -= barChangeSpeed;
@@ -98,21 +98,14 @@ public class Movement : MonoBehaviour
                     m_powerIsIncreasing = false;
                 }
             }
-
-
-
-
-            //float fill = m_CurrentPowerBar / MaxPowerBar;
-            //PowerBarMask.fillAmount = fill;
+            
             PowerSlider.value = m_CurrentPowerBar;
 
             yield return new WaitForSeconds(0.02f);
         }
         yield return null;
     }
-
-
-
+    
     public void OnSliderClick()
     {
         Hit();
@@ -154,28 +147,31 @@ public class Movement : MonoBehaviour
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (!Moving)
         {
-            yangle -= 0.3f;
-            transform.eulerAngles = new Vector3(0, yangle, 0);
+            if (Input.GetKey(KeyCode.Q))
+            {
+                yangle -= 0.3f;
+                transform.eulerAngles = new Vector3(0, yangle, 0);
+            }
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                yangle += 0.3f;
+                transform.eulerAngles = new Vector3(0, yangle, 0);
+            }
+        
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Rotate(Vector3.back * speed * Time.deltaTime);
+            }
+        
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Rotate(-Vector3.back * speed * Time.deltaTime);
+            }
         }
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            yangle += 0.3f;
-            transform.eulerAngles = new Vector3(0, yangle, 0);
-        }
-        
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Rotate(Vector3.back * speed * Time.deltaTime);
-        }
-        
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Rotate(-Vector3.back * speed * Time.deltaTime);
-        }
-        
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
@@ -185,8 +181,7 @@ public class Movement : MonoBehaviour
         {
             //slider
             mainSlider.value = 50.0f;
-
-
+            
             Arrow.SetActive(false);
         }
         
@@ -202,7 +197,7 @@ public class Movement : MonoBehaviour
             StartCoroutine(UpdatePowerBar());
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (powerBarOn && Input.GetKeyDown(KeyCode.Space))
         {
             powerBarOn = false;
             Hit();
@@ -274,6 +269,7 @@ public class Movement : MonoBehaviour
     public void OnResetBall() { //Keep this, this resets the ball when the event is fired when they move to another hole.
         rb.velocity = Vector3.zero;
         m_IgnoreUpdates = false;
+        hasFinishedThisHole = false;
     }
 
     private void OnPickupCollected(Collectible pickup)
@@ -282,5 +278,19 @@ public class Movement : MonoBehaviour
         {
             FireballActive = true;
         }
+    }
+
+    private void BallStrokedOutEvent(Movement obj)
+    {
+        // Out of strokes
+        hasFinishedThisHole = true;
+        // TODO show message
+    }
+
+    private void BallScoreEvent(Movement obj)
+    {
+        // You scored
+        hasFinishedThisHole = true;
+        // TODO show message
     }
 }
