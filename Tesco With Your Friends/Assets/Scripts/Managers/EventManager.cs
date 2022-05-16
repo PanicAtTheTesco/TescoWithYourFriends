@@ -41,7 +41,7 @@ namespace Tesco.Managers {
             ballHitEvent?.Invoke(movement);
         }
 
-        // Fired when the ball should be reset when moving to a new hold on the same course
+        // Fired when the ball should be reset when moving to a new hole on the same course
         public static void ResetBalls()
         {
             resetBallsEvent?.Invoke();

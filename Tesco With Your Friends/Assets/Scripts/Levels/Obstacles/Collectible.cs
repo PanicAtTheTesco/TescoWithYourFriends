@@ -72,20 +72,24 @@ public class Collectible : MonoBehaviour
         }
 
         // Animate the floating object if it exists
-        if (active && floatSpawned != null)
+        if (floatSpawned != null)
         {
             // Set floating object to visible/hidden (TODO: transparency?)
             if (active != floatSpawned.activeSelf)
             {
+                floatSpawned.transform.Translate(0, -1000, 0);
                 floatSpawned.SetActive(active);
             }
-            
-            Vector3 pos = floatSpawned.transform.localPosition;
-            pos.y = floatAscendCurve.Evaluate(Time.time * floatAscendMultiplier);
-            floatSpawned.transform.localPosition = pos;
 
-            Vector3 rotation = floatRotateSpeed * Time.deltaTime;
-            floatSpawned.transform.Rotate(rotation);
+            if (active)
+            {
+                Vector3 pos = floatSpawned.transform.localPosition;
+                pos.y = floatAscendCurve.Evaluate(Time.time * floatAscendMultiplier);
+                floatSpawned.transform.localPosition = pos;
+
+                Vector3 rotation = floatRotateSpeed * Time.deltaTime;
+                floatSpawned.transform.Rotate(rotation);   
+            }
         }
     }
 

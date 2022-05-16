@@ -247,10 +247,12 @@ public class Movement : MonoBehaviour
 
     private void OnDisable() {//Keep this, used for clearing the event subcription when the ball gets disabled
         EventManager.resetBallsEvent -= OnResetBall;
+        EventManager.pickupCollectedEvent -= OnPickupCollected;
     }
 
     private void OnDestroy() {//Keep this, used for clearing the event subcription when the ball gets destroyed
         EventManager.resetBallsEvent -= OnResetBall;
+        EventManager.pickupCollectedEvent -= OnPickupCollected;
     }
 
     public void SetPlayer(PlayerNumber num) {
