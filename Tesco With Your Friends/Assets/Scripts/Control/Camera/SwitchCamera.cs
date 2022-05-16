@@ -83,7 +83,9 @@ public class SwitchCamera : MonoBehaviour
             {
                 BallCam.SetActive(true);
                 FreeCam.SetActive(false);
-                
+                m_ControlUI.SetActive(true);
+                m_SliderUI.SetActive(true);
+                m_timeUI.SetActive(true);
             }
         }
     }
