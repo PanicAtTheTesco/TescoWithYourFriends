@@ -69,7 +69,7 @@ public class SwitchCamera : MonoBehaviour
 
             
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && !m_inCinCamera)
         {
             if(BallCam.activeSelf)
             {
