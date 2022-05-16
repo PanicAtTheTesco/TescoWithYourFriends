@@ -39,16 +39,16 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI m_TimeText;
     [SerializeField] private TextMeshProUGUI m_StrokeText;
+    [SerializeField] private TextMeshProUGUI m_StatusText;
 
+    // Position at last turn
     public Vector3 m_PrevPosition { get; private set; }
-
-
-
+    
     //powerBar
     public Slider PowerSlider;
     float barChangeSpeed = 2;
     float MaxPowerBar = 50;
-    public float m_CurrentPowerBar;
+    float m_CurrentPowerBar;
     bool m_powerIsIncreasing;
     bool powerBarOn;
     float yangle = 0;
@@ -284,13 +284,15 @@ public class Movement : MonoBehaviour
     {
         // Out of strokes
         hasFinishedThisHole = true;
-        // TODO show message
+        m_StatusText.text = "Out of strokes!";
+        m_StatusText.gameObject.SetActive(true);
     }
 
     private void BallScoreEvent(Movement obj)
     {
         // You scored
         hasFinishedThisHole = true;
-        // TODO show message
+        m_StatusText.text = "You did it!";
+        m_StatusText.gameObject.SetActive(true);
     }
 }
