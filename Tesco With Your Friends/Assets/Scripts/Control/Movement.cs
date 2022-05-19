@@ -6,7 +6,8 @@ using Tesco.Managers;
 using Tesco.Level_Stuff;
 using TMPro;
 
-public enum PlayerNumber {
+public enum PlayerNumber
+{
     Player1,
     Player2,
     Player3,
@@ -23,7 +24,7 @@ public class Movement : MonoBehaviour
     public Slider mainSlider;
     public Vector3 stopped = new Vector3(0.0f, 0.0f, 0.0f);
     public float speed = 5.0f;
-    
+
     public GameObject Arrow;
     public bool Moving = true;
     public bool FireballActive = false;
@@ -37,27 +38,30 @@ public class Movement : MonoBehaviour
     private bool m_IgnoreUpdates; //Used to tell the script to just skip over the code in the if statement if the IgnoreUpdates value is true, mostly used it to make sure I don't spam tf out of events
     private CourseController m_Course;
 
+    public GameManager manager;
+
     [SerializeField] private TextMeshProUGUI m_TimeText;
     [SerializeField] private TextMeshProUGUI m_StrokeText;
     [SerializeField] private TextMeshProUGUI m_StatusText;
 
     // Position at last turn
     public Vector3 m_PrevPosition { get; private set; }
-    
+
     //powerBar
     public Slider PowerSlider;
-    float barChangeSpeed = 2;
-    float MaxPowerBar = 50;
-    float m_CurrentPowerBar;
-    bool m_powerIsIncreasing;
-    bool powerBarOn;
-    float yangle = 0;
-    
+
+    private float barChangeSpeed = 2;
+    private float MaxPowerBar = 50;
+    private float m_CurrentPowerBar;
+    private bool m_powerIsIncreasing;
+    private bool powerBarOn;
+    private float yangle = 0;
+
     // Whether or not this player has scored in this hole
     private bool hasFinishedThisHole = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         //slider
         //mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
@@ -69,6 +73,8 @@ public class Movement : MonoBehaviour
         powerBarOn = true;
         StartCoroutine(UpdatePowerBar());
 
+        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        manager.players.Add(this.gameObject);
         ps = GetComponent<ParticleSystem>();
 
         EventManager.resetBallsEvent += OnResetBall;
@@ -78,7 +84,7 @@ public class Movement : MonoBehaviour
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually (lol as if)
     }
 
-    IEnumerator UpdatePowerBar()
+    private IEnumerator UpdatePowerBar()
     {
         while (powerBarOn && !hasFinishedThisHole)
         {
@@ -98,14 +104,14 @@ public class Movement : MonoBehaviour
                     m_powerIsIncreasing = false;
                 }
             }
-            
+
             PowerSlider.value = m_CurrentPowerBar;
 
             yield return new WaitForSeconds(0.02f);
         }
         yield return null;
     }
-    
+
     public void OnSliderClick()
     {
         Hit();
@@ -140,7 +146,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (rb.velocity == stopped && !m_IgnoreUpdates)
         {
@@ -160,19 +166,19 @@ public class Movement : MonoBehaviour
                 yangle += 0.3f;
                 transform.eulerAngles = new Vector3(0, yangle, 0);
             }
-        
+
             if (Input.GetKey(KeyCode.W))
             {
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
             }
-        
+
             if (Input.GetKey(KeyCode.S))
             {
                 transform.Rotate(-Vector3.back * speed * Time.deltaTime);
             }
         }
 
-        if(rb.velocity == stopped)
+        if (rb.velocity == stopped)
         {
             Arrow.SetActive(true);
             FireballActive = false;
@@ -181,10 +187,10 @@ public class Movement : MonoBehaviour
         {
             //slider
             mainSlider.value = 50.0f;
-            
+
             Arrow.SetActive(false);
         }
-        
+
         if (Moving && (rb.velocity.magnitude < 0.3f))
         {
             rb.velocity = Vector3.zero;
@@ -193,7 +199,7 @@ public class Movement : MonoBehaviour
             Moving = false;
 
             powerBarOn = true;
-            
+
             StartCoroutine(UpdatePowerBar());
         }
 
@@ -201,24 +207,24 @@ public class Movement : MonoBehaviour
         {
             powerBarOn = false;
             Hit();
-            
+
             StopCoroutine(UpdatePowerBar());
         }
-        
 
         UpdateTime();
         UpdateStrokes();
     }
 
     // Update the time remaining counter
-    private void UpdateTime() {
+    private void UpdateTime()
+    {
         float limit = m_Course.GetTimeLimit();
         float nTime = limit - m_Course.m_Time;
         string mins = Mathf.Floor(nTime / 60).ToString("00");
         string secs = Mathf.Floor(nTime % 60).ToString("00");
 
         m_TimeText.SetText(string.Format("{0}:{1}", mins, secs));
-        
+
         // Turn red for last 30 seconds
         if (nTime <= 30)
         {
@@ -232,7 +238,7 @@ public class Movement : MonoBehaviour
         float nStrokes = m_Course.GetPlayerHoleStrokes(this);
         float limit = m_Course.GetStrokeLimit();
         m_StrokeText.SetText(string.Format("Strokes: {0}/{1}", nStrokes, limit));
-        
+
         // Turn red for last 3 strokes
         if (limit - nStrokes <= 3)
         {
@@ -240,33 +246,40 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnDisable() {//Keep this, used for clearing the event subcription when the ball gets disabled
+    private void OnDisable()
+    {//Keep this, used for clearing the event subcription when the ball gets disabled
         EventManager.resetBallsEvent -= OnResetBall;
         EventManager.pickupCollectedEvent -= OnPickupCollected;
     }
 
-    private void OnDestroy() {//Keep this, used for clearing the event subcription when the ball gets destroyed
+    private void OnDestroy()
+    {//Keep this, used for clearing the event subcription when the ball gets destroyed
         EventManager.resetBallsEvent -= OnResetBall;
         EventManager.pickupCollectedEvent -= OnPickupCollected;
     }
 
-    public void SetPlayer(PlayerNumber num) {
-        if(m_hasPlayer) {
+    public void SetPlayer(PlayerNumber num)
+    {
+        if (m_hasPlayer)
+        {
             return;
         }
         m_Player = num;
     }
 
-    public void SetIgnore(bool ignore) { //Keep this? Used when the ball enters a state where they shouldn't be allowed to hit (such as when they go in the hole or stroke out)
+    public void SetIgnore(bool ignore)
+    { //Keep this? Used when the ball enters a state where they shouldn't be allowed to hit (such as when they go in the hole or stroke out)
         m_IgnoreUpdates = ignore;
         rb.velocity = Vector3.zero;
     }
 
-    public void SetCourse(CourseController cont) { //Keep this
+    public void SetCourse(CourseController cont)
+    { //Keep this
         m_Course = cont;
     }
 
-    public void OnResetBall() { //Keep this, this resets the ball when the event is fired when they move to another hole.
+    public void OnResetBall()
+    { //Keep this, this resets the ball when the event is fired when they move to another hole.
         rb.velocity = Vector3.zero;
         m_IgnoreUpdates = false;
         hasFinishedThisHole = false;

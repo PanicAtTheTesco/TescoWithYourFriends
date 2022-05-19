@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tesco.Managers {
-
+namespace Tesco.Managers
+{
     // Dispatches game events to listeners
-    public class EventManager {
-
+    public class EventManager
+    {
         public static Action<Movement> ballScoreEvent;
         public static Action<Movement> ballStrokedOutEvent;
         public static Action resetBallsEvent;
@@ -16,6 +16,7 @@ namespace Tesco.Managers {
         public static Action<Movement> checkStrokeCountEvent;
         public static Action<Movement> changePlayerTurnEvent;
         public static Action<Collectible> pickupCollectedEvent;
+        public static Action onMultiplayerMode;     // this is to detect whether the game mode is a multiplayer and if so, than the turn system is set up
 
         // Fired when player has reached stroke limit for course
         public static void StrokeOut(Movement movement)
@@ -52,7 +53,7 @@ namespace Tesco.Managers {
         {
             ballScoreEvent?.Invoke(move);
         }
-        
+
         // Fired when a player collects a pickup
         public static void PickupCollected(Collectible collectible)
         {

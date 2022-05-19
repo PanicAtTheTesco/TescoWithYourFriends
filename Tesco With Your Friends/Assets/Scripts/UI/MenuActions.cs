@@ -9,7 +9,7 @@ public class MenuActions : MonoBehaviour
     private GameManager m_GameManager;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
@@ -33,4 +33,15 @@ public class MenuActions : MonoBehaviour
     {
         m_GameManager.Quit();
     }
+
+    #region Shahil
+
+    public void PlayWithAI()
+    {
+        m_GameManager.spawnAI = true;
+        SwitchScene(LevelType.Level_01);
+        EventManager.onMultiplayerMode?.Invoke();
+    }
+
+    #endregion Shahil
 }
