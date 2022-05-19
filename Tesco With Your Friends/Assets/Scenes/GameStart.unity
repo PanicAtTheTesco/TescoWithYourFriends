@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Levelhandler: {fileID: 2049217026}
-  turnHandler: {fileID: 0}
+  turnHandler: {fileID: 2049217029}
   spawnAI: 0
   players: []
 --- !u!4 &2049217028

@@ -60,6 +60,9 @@ public class Movement : MonoBehaviour
     // Whether or not this player has scored in this hole
     private bool hasFinishedThisHole = false;
 
+    public getTurn turn;
+
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -82,6 +85,9 @@ public class Movement : MonoBehaviour
         EventManager.ballScoreEvent += BallScoreEvent;
         EventManager.ballStrokedOutEvent += BallStrokedOutEvent;
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually (lol as if)
+
+        turn = GetComponent<getTurn>();
+
     }
 
     private IEnumerator UpdatePowerBar()
@@ -153,7 +159,7 @@ public class Movement : MonoBehaviour
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
 
-        if (!Moving)
+        if (!Moving && turn.myTurn)
         {
             if (Input.GetKey(KeyCode.Q))
             {
@@ -209,6 +215,7 @@ public class Movement : MonoBehaviour
             Hit();
 
             StopCoroutine(UpdatePowerBar());
+            manager.ChangeTurn();
         }
 
         UpdateTime();

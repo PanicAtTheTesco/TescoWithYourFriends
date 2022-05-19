@@ -23,11 +23,10 @@ public class EnemyManager : MonoBehaviour
         i_enemyRef = Instantiate(enemyRef, enemySpawnPoint.transform.position, enemySpawnPoint.transform.rotation);
         manager.players.Add(i_enemyRef);
         ai = i_enemyRef.GetComponent<OpponentAI>();
-        manager.players.Add(i_enemyRef);
 
-        /*                ai.manager = manager;
-                        ai.e_Manager = this;
-        */
+        ai.manager = manager;
+        ai.e_Manager = this;
+
         ai.destination = destination;
     }
 }

@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Utility
 {
-
     public class UtilityClass : MonoBehaviour
     {
-        public static void LineRenderer(GameObject obj,Transform destination, List<Vector3> PathList)
+        public static void LineRenderer(GameObject obj, Transform destination, List<Vector3> PathList)
         {
             LineRenderer line;
             bool b = obj.TryGetComponent<LineRenderer>(out line);
@@ -22,11 +20,8 @@ namespace Utility
                 {
                     line.SetPosition(i, PathList[i]);
                 }
-
             }
-
         }
-
 
         /// <summary>
         /// Use it when you want to clamp vertical rotation (based on the input)
@@ -43,6 +38,7 @@ namespace Utility
 
             return finalRot;
         }
+
         /// <summary>
         /// Use it when you want to clamp vertical rotation
         /// </summary>
@@ -72,9 +68,18 @@ namespace Utility
             return slerpRot;
         }
 
+        public static float AngleBetweenObjects_On_X(Transform from, Transform to)
+        {
+            Vector3 targetDir = to.position - from.position;
+            float angle = Vector3.Angle(targetDir, from.forward);
+            return angle;
+        }
 
-
-
-        
+        public static float AngleBetweenObjects(Vector3 from, Vector3 to, Vector3 forwardVecOfSelf)
+        {
+            Vector3 targetDir = to - from;
+            float angle = Vector3.Angle(targetDir, forwardVecOfSelf);
+            return angle;
+        }
     }
 }

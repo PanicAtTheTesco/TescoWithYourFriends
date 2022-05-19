@@ -12,6 +12,8 @@ TagManager:
   - FreeCamera
   - EnemySpawnPoint
   - destination
+  - target
+  - ground
   layers:
   - Default
   - TransparentFX
