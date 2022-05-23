@@ -52,6 +52,7 @@ public class Movement : MonoBehaviour
     bool m_powerIsIncreasing;
     bool powerBarOn;
     float yangle = 0;
+
     
     // Whether or not this player has scored in this hole
     private bool hasFinishedThisHole = false;
@@ -70,6 +71,8 @@ public class Movement : MonoBehaviour
         StartCoroutine(UpdatePowerBar());
 
         ps = GetComponent<ParticleSystem>();
+
+        
 
         EventManager.resetBallsEvent += OnResetBall;
         EventManager.pickupCollectedEvent += OnPickupCollected;
@@ -121,13 +124,10 @@ public class Movement : MonoBehaviour
 
             if (FireballActive)
             {
-                speedMultiplier = 3.0f;
-                ps.Play();
+                speedMultiplier = 6.0f;
+                //ps.Play();
             }
-            else
-            {
-                ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            }
+            
 
             //slider
             //rb.AddForce(-transform.right * mainSlider.value * speedMultiplier);
@@ -175,13 +175,15 @@ public class Movement : MonoBehaviour
         if(rb.velocity == stopped)
         {
             Arrow.SetActive(true);
-            FireballActive = false;
+            GetComponent<LineRenderer>().enabled = true;
+            //FireballActive = false;
         }
         if (rb.velocity != stopped)
         {
             //slider
             mainSlider.value = 50.0f;
             
+            GetComponent<LineRenderer>().enabled = false;
             Arrow.SetActive(false);
         }
         
