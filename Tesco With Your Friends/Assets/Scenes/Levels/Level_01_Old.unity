@@ -1766,10 +1766,10 @@ MonoBehaviour:
   Arrow: {fileID: 648545231}
   Moving: 1
   FireballActive: 1
+  ps: {fileID: 0}
   PlayerPos: {fileID: 0}
   startPos: {fileID: 0}
-  score: 0
-  ps: {fileID: 0}
+  m_TimeText: {fileID: 0}
 --- !u!1001 &196247632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6794,6 +6794,14 @@ PrefabInstance:
       propertyPath: field of view
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2181740525108047601, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972686707384486582, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7800738734571485186, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
       propertyPath: m_Name
       value: Golf Ball Variant
@@ -6849,6 +6857,18 @@ PrefabInstance:
     - target: {fileID: 7800738734571485209, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691717784139905310, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691717784545489307, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691717785357281028, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a0dbaa069d8f014abb57cba1f20aa4c, type: 3}
@@ -11306,11 +11326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1134644055670630563, guid: b3361d2259b249347ad983acb1c8dcf6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134644055802404902, guid: b3361d2259b249347ad983acb1c8dcf6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3361d2259b249347ad983acb1c8dcf6, type: 3}
@@ -21470,7 +21490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1845242333
 MonoBehaviour:
   m_ObjectHideFlags: 0

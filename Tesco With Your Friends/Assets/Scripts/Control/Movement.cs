@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Tesco.Managers;
 using Tesco.Level_Stuff;
 using TMPro;
+using UnityEngine.Serialization;
 
 public enum PlayerNumber {
     Player1,
@@ -30,6 +31,9 @@ public class Movement : MonoBehaviour
 
     public ParticleSystem ps;
 
+    public getTurn turn;    // (change by Shahil)
+    public GameManager manager;
+    
     public Transform PlayerPos;
     public Transform startPos;
 
@@ -45,8 +49,14 @@ public class Movement : MonoBehaviour
     {
         mainSlider.onValueChanged.AddListener(delegate { OnSliderClick(); });
         ps = GetComponent<ParticleSystem>();
-
         EventManager.resetBallsEvent += OnResetBall;
+        
+        turn = GetComponent<getTurn>();    // (change by Shahil)
+        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();    // (change by Shahil)
+        manager.players.Add(this.gameObject);
+
+
+
         // TODO: add changePlayerTurnEvent listener to handle local multiplayer eventually
     }
 
@@ -82,30 +92,35 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         if(rb.velocity == stopped && !m_IgnoreUpdates) {
             EventManager.CheckStrokes(this); //Keep this, used for checking strokes when the ball has stopped.
         }
 
-        if (!m_Course.displayScoreBoard)
+        if (turn.myTurn)    // (change by Shahil)
         {
-            if (Input.GetKey(KeyCode.Q))
-            {
-                transform.Rotate(-Vector3.up * speed * Time.deltaTime);
-            }
 
-            if (Input.GetKey(KeyCode.E))
+            if (!m_Course.displayScoreBoard)
             {
-                transform.Rotate(Vector3.up * speed * Time.deltaTime);
-            }
+                if (Input.GetKey(KeyCode.Q))
+                {
+                    transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+                }
 
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Rotate(Vector3.back * speed * Time.deltaTime);
-            }
+                if (Input.GetKey(KeyCode.E))
+                {
+                    transform.Rotate(Vector3.up * speed * Time.deltaTime);
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    transform.Rotate(Vector3.back * speed * Time.deltaTime);
+                }
 
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.Rotate(-Vector3.back * speed * Time.deltaTime);
+                if (Input.GetKey(KeyCode.S))
+                {
+                    transform.Rotate(-Vector3.back * speed * Time.deltaTime);
+                }
             }
         }
 
@@ -125,6 +140,7 @@ public class Movement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             Moving = false;
+            manager.ChangeTurn();
         }
 
         FormatTime();
@@ -166,5 +182,6 @@ public class Movement : MonoBehaviour
     public void OnResetBall() { //Keep this, this resets the ball when the event is fired when they move to another hole.
         rb.velocity = Vector3.zero;
         m_IgnoreUpdates = false;
+       
     }
 }

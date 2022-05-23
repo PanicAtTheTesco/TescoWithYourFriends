@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Tesco.Managers {
         public static Action<Movement> checkStrokeCountEvent;
         public static Action<Movement> changePlayerTurnEvent;
 
+        public static Action onMultiplayerMode;
+        public static Action onSingleplayerMode;
+        
+        
         // Fired when ???????
         public static void StrokeOut(Movement movement) {
             if(ballStrokedOutEvent != null) {

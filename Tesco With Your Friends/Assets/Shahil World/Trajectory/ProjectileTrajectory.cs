@@ -19,7 +19,8 @@ public class ProjectileTrajectory : MonoBehaviour
     public float minClamp;
     public float maxClamp;
     public float clamp_RotX;
-    
+    public float clamp_RotY;
+    public float p_Speed;
     [Space(5)] [Header("Line Rendering")]
     public float vel;
     public int numPoints;
@@ -36,23 +37,48 @@ public class ProjectileTrajectory : MonoBehaviour
     private void Update()
     {
         //NOTE: This input part needs to be removed from this script since it was implemented for the dummy object.
-        if (Input.GetKey(KeyCode.W))
-        {
-            // To Clamp the Rotation
-            shotPoint.transform.Rotate(-2.0f,0,0);
-        }
-
+        
         if (Input.GetKey(KeyCode.S))
         {
-            shotPoint.transform.Rotate(2.0f,0,0);
+            // To Clamp the Rotation
+            //shotPoint.transform.Rotate(-p_Speed * Time.deltaTime,0,0);
+            Quaternion newRot = Quaternion.Euler(-p_Speed * Time.deltaTime, 0, 0);
+            shotPoint.transform.rotation = newRot;
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            //shotPoint.transform.Rotate(p_Speed * Time.deltaTime,0,0);
+            Quaternion newRot = Quaternion.Euler(p_Speed * Time.deltaTime, 0, 0);
+            shotPoint.transform.rotation = newRot;
+            
+        }
+        
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            // To Clamp the Rotation
+            //shotPoint.transform.Rotate(0.0f,-p_Speed * Time.deltaTime,0);
+            Quaternion newRot = Quaternion.Euler(0, -p_Speed * Time.deltaTime, 0);
+            shotPoint.transform.rotation = newRot;
+
+        }
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            //shotPoint.transform.Rotate(0.0f,p_Speed * Time.deltaTime,0);
+            Quaternion newRot = Quaternion.Euler(0, p_Speed * Time.deltaTime, 0);
+            shotPoint.transform.rotation = newRot;
+        }
+        
+        
         
         
         // The code below needs to go somewhere where the pointer is controlled
         
         // Clamp Rotation starts
         clamp_RotX = Mathf.Clamp(shotPoint.transform.eulerAngles.x, minClamp, maxClamp);
-        Vector3 clampRot = new Vector3(clamp_RotX, 0.0f, 0.0f);
+        clamp_RotY = Mathf.Clamp(shotPoint.transform.eulerAngles.y, -360, 360);
+        Vector3 clampRot = new Vector3(clamp_RotX, clamp_RotY, 0.0f);
         shotPoint.transform.eulerAngles = clampRot;
         // Clamp rotation Ends
 
@@ -74,6 +100,7 @@ public class ProjectileTrajectory : MonoBehaviour
         }
 
         renderer.SetPositions(points.ToArray());
+    
     }
     
 }

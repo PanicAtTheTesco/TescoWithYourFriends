@@ -11,6 +11,9 @@ TagManager:
   - PlayerContainer
   - FreeCamera
   - Test_Player
+  - toRelocate
+  - destination
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX

@@ -14,10 +14,20 @@ public class MenuActions : MonoBehaviour
         m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
+    /*
     public void StartGame()
     {
         SwitchScene(LevelType.Level_01);
     }
+    */
+    
+    // Modified
+    public void StartGame()
+    {
+        SwitchScene(LevelType.Level_01);
+        EventManager.onSingleplayerMode?.Invoke();
+    }
+
 
     public void ShowMainMenu()
     {
@@ -33,4 +43,18 @@ public class MenuActions : MonoBehaviour
     {
         m_GameManager.Quit();
     }
+
+
+    #region Shahil
+
+    public void PlayWithAI()
+    {
+        m_GameManager.spawnAI = true;
+        SwitchScene(LevelType.Level_01);
+        EventManager.onMultiplayerMode?.Invoke();
+    }
+
+
+
+    #endregion
 }

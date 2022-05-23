@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 2468153}
   - component: {fileID: 2468155}
   - component: {fileID: 2468156}
+  - component: {fileID: 2468157}
   m_Layer: 0
   m_Name: Floo 4 (33)
   m_TagString: Untagged
@@ -235,6 +236,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &2468157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &4079926
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4079927}
+  - component: {fileID: 4079928}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -329,6 +360,35 @@ Transform:
   m_Father: {fileID: 393944736}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4079928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 82c37e6f2be7a0340baaf516134ddefd, type: 2}
 --- !u!1 &22621667
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +401,7 @@ GameObject:
   - component: {fileID: 22621670}
   - component: {fileID: 22621669}
   - component: {fileID: 22621671}
+  - component: {fileID: 22621672}
   m_Layer: 0
   m_Name: fridge closed (4)
   m_TagString: Untagged
@@ -427,6 +488,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7806146900906723154, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &22621672
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22621667}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.002}
+  m_TimeToStationary: 0.5
 --- !u!1 &25859940
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +614,7 @@ GameObject:
   - component: {fileID: 33832310}
   - component: {fileID: 33832309}
   - component: {fileID: 33832311}
+  - component: {fileID: 33832312}
   m_Layer: 0
   m_Name: softdrink 1 (4)
   m_TagString: Untagged
@@ -623,6 +701,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3247480035516220982, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &33832312
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33832307}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.038000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &55643649
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +730,7 @@ GameObject:
   - component: {fileID: 55643651}
   - component: {fileID: 55643653}
   - component: {fileID: 55643654}
+  - component: {fileID: 55643655}
   m_Layer: 0
   m_Name: Floo 4 (54)
   m_TagString: Untagged
@@ -735,6 +830,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &55643655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55643649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &58640715
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +871,7 @@ GameObject:
   - component: {fileID: 58640718}
   - component: {fileID: 58640717}
   - component: {fileID: 58640719}
+  - component: {fileID: 58640720}
   m_Layer: 0
   m_Name: Shelf   (6)
   m_TagString: Untagged
@@ -833,6 +958,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &58640720
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58640715}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &61623570
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +987,7 @@ GameObject:
   - component: {fileID: 61623572}
   - component: {fileID: 61623574}
   - component: {fileID: 61623575}
+  - component: {fileID: 61623576}
   m_Layer: 0
   m_Name: Floo 4 (17)
   m_TagString: Untagged
@@ -945,6 +1087,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0, z: 0.0004182598}
+--- !u!114 &61623576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61623570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &75366956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1239,7 @@ GameObject:
   - component: {fileID: 83915998}
   - component: {fileID: 83915997}
   - component: {fileID: 83915999}
+  - component: {fileID: 83916000}
   m_Layer: 0
   m_Name: Basket Stack (2)
   m_TagString: Untagged
@@ -1154,6 +1326,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2214956666117139750, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &83916000
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83915995}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.010000001, z: 0.016}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.007}
+  m_TimeToStationary: 0.5
 --- !u!1 &89801430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1354,7 @@ GameObject:
   - component: {fileID: 89801433}
   - component: {fileID: 89801432}
   - component: {fileID: 89801434}
+  - component: {fileID: 89801435}
   m_Layer: 0
   m_Name: softdrink 1 (1)
   m_TagString: Untagged
@@ -1252,6 +1441,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3247480035516220982, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &89801435
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89801430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.038000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &92233761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1469,7 @@ GameObject:
   - component: {fileID: 92233764}
   - component: {fileID: 92233763}
   - component: {fileID: 92233765}
+  - component: {fileID: 92233766}
   m_Layer: 0
   m_Name: cooled shelf (4)
   m_TagString: Untagged
@@ -1350,6 +1556,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3575118045824404264, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &92233766
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92233761}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.022000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &94254607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1586,7 @@ GameObject:
   - component: {fileID: 94254611}
   m_Layer: 0
   m_Name: Basket (1)
-  m_TagString: Untagged
+  m_TagString: destination
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -1461,6 +1683,7 @@ GameObject:
   - component: {fileID: 94566352}
   - component: {fileID: 94566354}
   - component: {fileID: 94566355}
+  - component: {fileID: 94566356}
   m_Layer: 0
   m_Name: Floo 4 (45)
   m_TagString: Untagged
@@ -1560,6 +1783,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &94566356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94566350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &95180606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1824,7 @@ GameObject:
   - component: {fileID: 95180609}
   - component: {fileID: 95180608}
   - component: {fileID: 95180610}
+  - component: {fileID: 95180611}
   m_Layer: 0
   m_Name: fridge closed (1)
   m_TagString: Untagged
@@ -1658,6 +1911,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7806146900906723154, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &95180611
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95180606}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.002}
+  m_TimeToStationary: 0.5
 --- !u!1 &105030629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1940,7 @@ GameObject:
   - component: {fileID: 105030631}
   - component: {fileID: 105030633}
   - component: {fileID: 105030634}
+  - component: {fileID: 105030635}
   m_Layer: 0
   m_Name: Floo 4 (51)
   m_TagString: Untagged
@@ -1770,6 +2040,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &105030635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105030629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &115728650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +2080,7 @@ GameObject:
   - component: {fileID: 115728651}
   - component: {fileID: 115728653}
   - component: {fileID: 115728652}
+  - component: {fileID: 115728654}
   m_Layer: 0
   m_Name: Lamp 1 (5)
   m_TagString: Untagged
@@ -1854,6 +2154,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115728650}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &115728654
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115728650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &118590879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +2275,7 @@ GameObject:
   - component: {fileID: 156214509}
   - component: {fileID: 156214508}
   - component: {fileID: 156214510}
+  - component: {fileID: 156214511}
   m_Layer: 0
   m_Name: cooled shelf (2)
   m_TagString: Untagged
@@ -2045,6 +2362,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3575118045824404264, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &156214511
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156214506}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.022000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &157644822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,6 +2637,7 @@ GameObject:
   - component: {fileID: 212436718}
   - component: {fileID: 212436720}
   - component: {fileID: 212436721}
+  - component: {fileID: 212436722}
   m_Layer: 0
   m_Name: Floo 4 (61)
   m_TagString: Untagged
@@ -2403,6 +2737,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &212436722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212436716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &213992081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2535,6 +2898,7 @@ GameObject:
   - component: {fileID: 220679164}
   - component: {fileID: 220679166}
   - component: {fileID: 220679167}
+  - component: {fileID: 220679168}
   m_Layer: 0
   m_Name: Floo 4 (21)
   m_TagString: Untagged
@@ -2634,6 +2998,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: 0, z: 0.0004182598}
+--- !u!114 &220679168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220679162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &231478501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +3039,7 @@ GameObject:
   - component: {fileID: 231478504}
   - component: {fileID: 231478503}
   - component: {fileID: 231478505}
+  - component: {fileID: 231478506}
   m_Layer: 0
   m_Name: Shelf   (3)
   m_TagString: Untagged
@@ -2732,6 +3126,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &231478506
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231478501}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &270160827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +3154,7 @@ GameObject:
   - component: {fileID: 270160830}
   - component: {fileID: 270160829}
   - component: {fileID: 270160831}
+  - component: {fileID: 270160832}
   m_Layer: 0
   m_Name: Shelf   (7)
   m_TagString: Untagged
@@ -2830,6 +3241,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &270160832
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270160827}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &291957238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3825,7 @@ GameObject:
   - component: {fileID: 350893549}
   - component: {fileID: 350893551}
   - component: {fileID: 350893552}
+  - component: {fileID: 350893553}
   m_Layer: 0
   m_Name: Floo 4 (26)
   m_TagString: Untagged
@@ -3497,6 +3925,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &350893553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350893547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &356407824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3591,6 +4048,7 @@ GameObject:
   - component: {fileID: 356652167}
   - component: {fileID: 356652169}
   - component: {fileID: 356652170}
+  - component: {fileID: 356652171}
   m_Layer: 0
   m_Name: Floo 4 (6)
   m_TagString: Untagged
@@ -3690,6 +4148,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0, z: 0.0004182499}
+--- !u!114 &356652171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356652165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &363764307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,6 +4400,54 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &382997917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382997919}
+  - component: {fileID: 382997918}
+  m_Layer: 0
+  m_Name: enemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &382997918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382997917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e883b46268e61664f8378cb1781f434d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnPoint: {fileID: 668439798}
+  enemyRef: {fileID: 129623586310508028, guid: 3413b6ff50875fd45b2324e67d99ffc1, type: 3}
+  i_enemyRef: {fileID: 0}
+  destination: {fileID: 0}
+  ai: {fileID: 0}
+--- !u!4 &382997919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382997917}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1570917053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383340668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,6 +4460,7 @@ GameObject:
   - component: {fileID: 383340671}
   - component: {fileID: 383340670}
   - component: {fileID: 383340672}
+  - component: {fileID: 383340673}
   m_Layer: 0
   m_Name: Shelf   (6)
   m_TagString: Untagged
@@ -4011,6 +4547,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &383340673
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383340668}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &393944735
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4641,7 @@ GameObject:
   - component: {fileID: 435152146}
   - component: {fileID: 435152148}
   - component: {fileID: 435152149}
+  - component: {fileID: 435152150}
   m_Layer: 0
   m_Name: Floo 4 (1)
   m_TagString: Untagged
@@ -4188,6 +4741,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0, z: 0.0004182499}
+--- !u!114 &435152150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435152144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &449804750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4201,6 +4783,7 @@ GameObject:
   - component: {fileID: 449804752}
   - component: {fileID: 449804754}
   - component: {fileID: 449804755}
+  - component: {fileID: 449804756}
   m_Layer: 0
   m_Name: Floo 4 (44)
   m_TagString: Untagged
@@ -4300,6 +4883,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &449804756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449804750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &480426608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4440,6 +5052,7 @@ GameObject:
   - component: {fileID: 488599853}
   - component: {fileID: 488599855}
   - component: {fileID: 488599854}
+  - component: {fileID: 488599856}
   m_Layer: 0
   m_Name: Lamp 1 (10)
   m_TagString: Untagged
@@ -4513,6 +5126,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488599852}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &488599856
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488599852}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &516273605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +5154,7 @@ GameObject:
   - component: {fileID: 516273608}
   - component: {fileID: 516273607}
   - component: {fileID: 516273609}
+  - component: {fileID: 516273610}
   m_Layer: 0
   m_Name: Shelf   (8)
   m_TagString: Untagged
@@ -4611,6 +5241,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &516273610
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516273605}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &519132616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,6 +5269,7 @@ GameObject:
   - component: {fileID: 519132619}
   - component: {fileID: 519132618}
   - component: {fileID: 519132620}
+  - component: {fileID: 519132621}
   m_Layer: 0
   m_Name: Shelf   (7)
   m_TagString: Untagged
@@ -4709,6 +5356,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &519132621
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519132616}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &535955684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,6 +5385,7 @@ GameObject:
   - component: {fileID: 535955686}
   - component: {fileID: 535955688}
   - component: {fileID: 535955689}
+  - component: {fileID: 535955690}
   m_Layer: 0
   m_Name: Floo 4 (19)
   m_TagString: Untagged
@@ -4821,6 +5485,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0, z: 0.0004182598}
+--- !u!114 &535955690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535955684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &549376451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,6 +5527,7 @@ GameObject:
   - component: {fileID: 549376453}
   - component: {fileID: 549376455}
   - component: {fileID: 549376456}
+  - component: {fileID: 549376457}
   m_Layer: 0
   m_Name: Floo 4 (53)
   m_TagString: Untagged
@@ -4933,6 +5627,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &549376457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549376451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &568277337
 GameObject:
   m_ObjectHideFlags: 0
@@ -4946,6 +5669,7 @@ GameObject:
   - component: {fileID: 568277339}
   - component: {fileID: 568277341}
   - component: {fileID: 568277342}
+  - component: {fileID: 568277343}
   m_Layer: 0
   m_Name: Floo 4 (16)
   m_TagString: Untagged
@@ -5045,6 +5769,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0, z: 0.0004182598}
+--- !u!114 &568277343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568277337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &582313492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,6 +5810,7 @@ GameObject:
   - component: {fileID: 582313495}
   - component: {fileID: 582313494}
   - component: {fileID: 582313496}
+  - component: {fileID: 582313497}
   m_Layer: 0
   m_Name: cooled shelf (3)
   m_TagString: Untagged
@@ -5143,6 +5897,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3575118045824404264, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &582313497
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582313492}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.022000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &598976771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,6 +6019,7 @@ GameObject:
   - component: {fileID: 610541183}
   - component: {fileID: 610541185}
   - component: {fileID: 610541186}
+  - component: {fileID: 610541187}
   m_Layer: 0
   m_Name: Floo 4 (48)
   m_TagString: Untagged
@@ -5348,6 +6119,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &610541187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610541181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &626090492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +6161,7 @@ GameObject:
   - component: {fileID: 626090494}
   - component: {fileID: 626090496}
   - component: {fileID: 626090497}
+  - component: {fileID: 626090498}
   m_Layer: 0
   m_Name: Floo 4 (23)
   m_TagString: Untagged
@@ -5460,6 +6261,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0, z: 0.0004182598}
+--- !u!114 &626090498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626090492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &644209741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,6 +6301,7 @@ GameObject:
   - component: {fileID: 644209742}
   - component: {fileID: 644209744}
   - component: {fileID: 644209743}
+  - component: {fileID: 644209745}
   m_Layer: 0
   m_Name: Lamp 1 (9)
   m_TagString: Untagged
@@ -5544,6 +6375,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644209741}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &644209745
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644209741}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &651055138
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,6 +6404,7 @@ GameObject:
   - component: {fileID: 651055140}
   - component: {fileID: 651055142}
   - component: {fileID: 651055143}
+  - component: {fileID: 651055144}
   m_Layer: 0
   m_Name: Floo 4 (14)
   m_TagString: Untagged
@@ -5656,6 +6504,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &651055144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651055138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &651862698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,6 +6681,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!1 &668439798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4055322976716318649, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+  m_PrefabInstance: {fileID: 4055322976159036239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679936924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,6 +6699,7 @@ GameObject:
   - component: {fileID: 679936926}
   - component: {fileID: 679936928}
   - component: {fileID: 679936929}
+  - component: {fileID: 679936930}
   m_Layer: 0
   m_Name: Floo 4 (4)
   m_TagString: Untagged
@@ -5916,6 +6799,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: 0, z: 0.0004182499}
+--- !u!114 &679936930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679936924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &717234661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,6 +6969,7 @@ GameObject:
   - component: {fileID: 741426969}
   - component: {fileID: 741426968}
   - component: {fileID: 741426970}
+  - component: {fileID: 741426971}
   m_Layer: 0
   m_Name: Shelf   (11)
   m_TagString: Untagged
@@ -6143,6 +7056,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &741426971
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741426966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &752279888
 GameObject:
   m_ObjectHideFlags: 0
@@ -6254,6 +7183,7 @@ GameObject:
   - component: {fileID: 755675513}
   - component: {fileID: 755675515}
   - component: {fileID: 755675516}
+  - component: {fileID: 755675517}
   m_Layer: 0
   m_Name: Floo 4 (37)
   m_TagString: Untagged
@@ -6353,6 +7283,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &755675517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755675511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &756153064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,6 +7325,7 @@ GameObject:
   - component: {fileID: 756153066}
   - component: {fileID: 756153068}
   - component: {fileID: 756153069}
+  - component: {fileID: 756153070}
   m_Layer: 0
   m_Name: Floo 4 (59)
   m_TagString: Untagged
@@ -6465,6 +7425,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &756153070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756153064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &756819294
 GameObject:
   m_ObjectHideFlags: 0
@@ -6477,6 +7466,7 @@ GameObject:
   - component: {fileID: 756819297}
   - component: {fileID: 756819296}
   - component: {fileID: 756819298}
+  - component: {fileID: 756819299}
   m_Layer: 0
   m_Name: Shelf   (14)
   m_TagString: Untagged
@@ -6563,6 +7553,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &756819299
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756819294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.010000001, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &764371497
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,6 +7581,7 @@ GameObject:
   - component: {fileID: 764371500}
   - component: {fileID: 764371499}
   - component: {fileID: 764371501}
+  - component: {fileID: 764371502}
   m_Layer: 0
   m_Name: Shelf   (10)
   m_TagString: Untagged
@@ -6661,6 +7668,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &764371502
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764371497}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &766951874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6673,6 +7696,7 @@ GameObject:
   - component: {fileID: 766951877}
   - component: {fileID: 766951876}
   - component: {fileID: 766951878}
+  - component: {fileID: 766951879}
   m_Layer: 0
   m_Name: Shelf   (11)
   m_TagString: Untagged
@@ -6759,6 +7783,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &766951879
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766951874}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &774176081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,6 +7905,7 @@ GameObject:
   - component: {fileID: 797183220}
   - component: {fileID: 797183222}
   - component: {fileID: 797183223}
+  - component: {fileID: 797183224}
   m_Layer: 0
   m_Name: Floo 4 (25)
   m_TagString: Untagged
@@ -6964,6 +8005,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &797183224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797183218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &812749051
 GameObject:
   m_ObjectHideFlags: 0
@@ -6977,6 +8047,7 @@ GameObject:
   - component: {fileID: 812749053}
   - component: {fileID: 812749055}
   - component: {fileID: 812749056}
+  - component: {fileID: 812749057}
   m_Layer: 0
   m_Name: Floo 4 (55)
   m_TagString: Untagged
@@ -7076,6 +8147,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &812749057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812749051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &833911220
 GameObject:
   m_ObjectHideFlags: 0
@@ -7089,6 +8189,7 @@ GameObject:
   - component: {fileID: 833911222}
   - component: {fileID: 833911224}
   - component: {fileID: 833911225}
+  - component: {fileID: 833911226}
   m_Layer: 0
   m_Name: Floo 4 (56)
   m_TagString: Untagged
@@ -7188,6 +8289,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &833911226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833911220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &874882556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7201,6 +8331,7 @@ GameObject:
   - component: {fileID: 874882558}
   - component: {fileID: 874882560}
   - component: {fileID: 874882561}
+  - component: {fileID: 874882562}
   m_Layer: 0
   m_Name: Floo 4 (34)
   m_TagString: Untagged
@@ -7300,6 +8431,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &874882562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874882556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &888225527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7312,6 +8472,7 @@ GameObject:
   - component: {fileID: 888225530}
   - component: {fileID: 888225529}
   - component: {fileID: 888225531}
+  - component: {fileID: 888225532}
   m_Layer: 0
   m_Name: Shelf   (9)
   m_TagString: Untagged
@@ -7398,6 +8559,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &888225532
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888225527}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &907396862
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,6 +8587,7 @@ GameObject:
   - component: {fileID: 907396865}
   - component: {fileID: 907396864}
   - component: {fileID: 907396866}
+  - component: {fileID: 907396867}
   m_Layer: 0
   m_Name: round shelf (1)
   m_TagString: Untagged
@@ -7496,6 +8674,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4612784706306714041, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &907396867
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907396862}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.009000001, y: 0.010000001, z: 0.013}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.012}
+  m_TimeToStationary: 0.5
 --- !u!1 &908020289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7507,6 +8701,7 @@ GameObject:
   - component: {fileID: 908020290}
   - component: {fileID: 908020293}
   - component: {fileID: 908020292}
+  - component: {fileID: 908020291}
   m_Layer: 0
   m_Name: Lamp 1 (1)
   m_TagString: Untagged
@@ -7529,6 +8724,22 @@ Transform:
   m_Father: {fileID: 1991170952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &908020291
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908020289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!23 &908020292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7593,6 +8804,7 @@ GameObject:
   - component: {fileID: 908378404}
   - component: {fileID: 908378406}
   - component: {fileID: 908378407}
+  - component: {fileID: 908378408}
   m_Layer: 0
   m_Name: Floo 4 (9)
   m_TagString: Untagged
@@ -7692,6 +8904,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &908378408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908378402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &913210988
 GameObject:
   m_ObjectHideFlags: 0
@@ -7798,6 +9039,7 @@ GameObject:
   - component: {fileID: 920729778}
   - component: {fileID: 920729780}
   - component: {fileID: 920729781}
+  - component: {fileID: 920729782}
   m_Layer: 0
   m_Name: Floo 4 (36)
   m_TagString: Untagged
@@ -7897,6 +9139,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &920729782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920729776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &925887508
 GameObject:
   m_ObjectHideFlags: 0
@@ -7910,6 +9181,7 @@ GameObject:
   - component: {fileID: 925887510}
   - component: {fileID: 925887512}
   - component: {fileID: 925887513}
+  - component: {fileID: 925887514}
   m_Layer: 0
   m_Name: Floo 4 (7)
   m_TagString: Untagged
@@ -8009,6 +9281,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0, z: 0.0004182499}
+--- !u!114 &925887514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925887508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &930238697
 GameObject:
   m_ObjectHideFlags: 0
@@ -8022,6 +9323,7 @@ GameObject:
   - component: {fileID: 930238699}
   - component: {fileID: 930238701}
   - component: {fileID: 930238702}
+  - component: {fileID: 930238703}
   m_Layer: 0
   m_Name: Floo 4 (20)
   m_TagString: Untagged
@@ -8121,6 +9423,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: 0, z: 0.0004182598}
+--- !u!114 &930238703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930238697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &973159831
 GameObject:
   m_ObjectHideFlags: 0
@@ -8134,6 +9465,7 @@ GameObject:
   - component: {fileID: 973159833}
   - component: {fileID: 973159835}
   - component: {fileID: 973159836}
+  - component: {fileID: 973159837}
   m_Layer: 0
   m_Name: Floo 4 (39)
   m_TagString: Untagged
@@ -8233,6 +9565,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &973159837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973159831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &976727424
 GameObject:
   m_ObjectHideFlags: 0
@@ -8246,6 +9607,7 @@ GameObject:
   - component: {fileID: 976727426}
   - component: {fileID: 976727428}
   - component: {fileID: 976727429}
+  - component: {fileID: 976727430}
   m_Layer: 0
   m_Name: Floo 4 (42)
   m_TagString: Untagged
@@ -8345,6 +9707,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &976727430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976727424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &980918375
 GameObject:
   m_ObjectHideFlags: 0
@@ -8450,6 +9841,7 @@ GameObject:
   - component: {fileID: 1024096839}
   - component: {fileID: 1024096838}
   - component: {fileID: 1024096840}
+  - component: {fileID: 1024096841}
   m_Layer: 0
   m_Name: Shelf   (12)
   m_TagString: Untagged
@@ -8536,6 +9928,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1024096841
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024096836}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1029408436
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,6 +9957,7 @@ GameObject:
   - component: {fileID: 1029408438}
   - component: {fileID: 1029408440}
   - component: {fileID: 1029408441}
+  - component: {fileID: 1029408442}
   m_Layer: 0
   m_Name: Floo 4 (40)
   m_TagString: Untagged
@@ -8648,6 +10057,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &1029408442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029408436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1039211489
 GameObject:
   m_ObjectHideFlags: 0
@@ -8661,6 +10099,7 @@ GameObject:
   - component: {fileID: 1039211491}
   - component: {fileID: 1039211493}
   - component: {fileID: 1039211494}
+  - component: {fileID: 1039211495}
   m_Layer: 0
   m_Name: Floo 4 (49)
   m_TagString: Untagged
@@ -8760,6 +10199,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &1039211495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039211489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1074753184
 GameObject:
   m_ObjectHideFlags: 0
@@ -8802,6 +10270,7 @@ GameObject:
   - component: {fileID: 1095858576}
   - component: {fileID: 1095858575}
   - component: {fileID: 1095858577}
+  - component: {fileID: 1095858578}
   m_Layer: 0
   m_Name: long round shelf (1)
   m_TagString: Untagged
@@ -8888,6 +10357,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8688236207882575699, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1095858578
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095858573}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.00001, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.010000001, y: 0.006, z: 0.012}
+  m_TimeToStationary: 0.5
 --- !u!1 &1104334042
 GameObject:
   m_ObjectHideFlags: 0
@@ -8901,6 +10386,7 @@ GameObject:
   - component: {fileID: 1104334044}
   - component: {fileID: 1104334046}
   - component: {fileID: 1104334047}
+  - component: {fileID: 1104334048}
   m_Layer: 0
   m_Name: Floo 4 (47)
   m_TagString: Untagged
@@ -9000,6 +10486,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &1104334048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104334042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1128846667
 GameObject:
   m_ObjectHideFlags: 0
@@ -9013,6 +10528,7 @@ GameObject:
   - component: {fileID: 1128846669}
   - component: {fileID: 1128846671}
   - component: {fileID: 1128846672}
+  - component: {fileID: 1128846673}
   m_Layer: 0
   m_Name: Floo 4 (2)
   m_TagString: Untagged
@@ -9112,6 +10628,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0, z: 0.0004182499}
+--- !u!114 &1128846673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128846667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1136351444
 GameObject:
   m_ObjectHideFlags: 0
@@ -9156,6 +10701,7 @@ GameObject:
   - component: {fileID: 1149646872}
   - component: {fileID: 1149646871}
   - component: {fileID: 1149646873}
+  - component: {fileID: 1149646874}
   m_Layer: 0
   m_Name: Shelf   (9)
   m_TagString: Untagged
@@ -9242,6 +10788,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1149646874
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149646869}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1205807931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,6 +10816,7 @@ GameObject:
   - component: {fileID: 1205807934}
   - component: {fileID: 1205807933}
   - component: {fileID: 1205807935}
+  - component: {fileID: 1205807936}
   m_Layer: 0
   m_Name: Shelf   (12)
   m_TagString: Untagged
@@ -9340,6 +10903,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1205807936
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205807931}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1233758632
 GameObject:
   m_ObjectHideFlags: 0
@@ -9352,6 +10931,7 @@ GameObject:
   - component: {fileID: 1233758635}
   - component: {fileID: 1233758634}
   - component: {fileID: 1233758636}
+  - component: {fileID: 1233758637}
   m_Layer: 0
   m_Name: Shelf   (8)
   m_TagString: Untagged
@@ -9438,6 +11018,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1233758637
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233758632}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1238285537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,6 +11046,7 @@ GameObject:
   - component: {fileID: 1238285539}
   - component: {fileID: 1238285538}
   - component: {fileID: 1238285541}
+  - component: {fileID: 1238285542}
   m_Layer: 0
   m_Name: Trolley1 (1)
   m_TagString: Untagged
@@ -9536,6 +11133,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8102614790813122353, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1238285542
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238285537}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.02, z: 0.02}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1245486914
 GameObject:
   m_ObjectHideFlags: 0
@@ -9548,6 +11161,7 @@ GameObject:
   - component: {fileID: 1245486917}
   - component: {fileID: 1245486916}
   - component: {fileID: 1245486918}
+  - component: {fileID: 1245486919}
   m_Layer: 0
   m_Name: softdrink 1 (3)
   m_TagString: Untagged
@@ -9634,6 +11248,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3247480035516220982, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1245486919
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245486914}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.038000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1259929539
 GameObject:
   m_ObjectHideFlags: 0
@@ -9647,6 +11277,7 @@ GameObject:
   - component: {fileID: 1259929541}
   - component: {fileID: 1259929543}
   - component: {fileID: 1259929544}
+  - component: {fileID: 1259929545}
   m_Layer: 0
   m_Name: Floo 4 (18)
   m_TagString: Untagged
@@ -9746,6 +11377,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0, z: 0.0004182598}
+--- !u!114 &1259929545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259929539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1328727627
 GameObject:
   m_ObjectHideFlags: 0
@@ -9758,6 +11418,7 @@ GameObject:
   - component: {fileID: 1328727630}
   - component: {fileID: 1328727629}
   - component: {fileID: 1328727631}
+  - component: {fileID: 1328727632}
   m_Layer: 0
   m_Name: Shelf   (1)
   m_TagString: Untagged
@@ -9844,6 +11505,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1328727632
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328727627}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1331993490
 GameObject:
   m_ObjectHideFlags: 0
@@ -9856,6 +11533,7 @@ GameObject:
   - component: {fileID: 1331993493}
   - component: {fileID: 1331993492}
   - component: {fileID: 1331993494}
+  - component: {fileID: 1331993495}
   m_Layer: 0
   m_Name: Basket Stack (1)
   m_TagString: Untagged
@@ -9942,6 +11620,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2214956666117139750, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1331993495
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331993490}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.010000001, z: 0.016}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.007}
+  m_TimeToStationary: 0.5
 --- !u!1 &1333224825
 GameObject:
   m_ObjectHideFlags: 0
@@ -10065,6 +11759,7 @@ GameObject:
   - component: {fileID: 1344212397}
   - component: {fileID: 1344212396}
   - component: {fileID: 1344212398}
+  - component: {fileID: 1344212399}
   m_Layer: 0
   m_Name: Sopping Cart Closed (2)
   m_TagString: Untagged
@@ -10151,6 +11846,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8102614790813122353, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1344212399
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344212394}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1346217124
 GameObject:
   m_ObjectHideFlags: 0
@@ -10162,6 +11873,7 @@ GameObject:
   - component: {fileID: 1346217125}
   - component: {fileID: 1346217127}
   - component: {fileID: 1346217126}
+  - component: {fileID: 1346217128}
   m_Layer: 0
   m_Name: Lamp 1 (2)
   m_TagString: Untagged
@@ -10235,6 +11947,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346217124}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1346217128
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346217124}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1351620620
 GameObject:
   m_ObjectHideFlags: 0
@@ -10248,6 +11976,7 @@ GameObject:
   - component: {fileID: 1351620622}
   - component: {fileID: 1351620624}
   - component: {fileID: 1351620625}
+  - component: {fileID: 1351620626}
   m_Layer: 0
   m_Name: Floo 4 (60)
   m_TagString: Untagged
@@ -10347,6 +12076,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &1351620626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351620620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1358092180
 GameObject:
   m_ObjectHideFlags: 0
@@ -10360,6 +12118,7 @@ GameObject:
   - component: {fileID: 1358092182}
   - component: {fileID: 1358092184}
   - component: {fileID: 1358092185}
+  - component: {fileID: 1358092186}
   m_Layer: 0
   m_Name: Floo 4 (43)
   m_TagString: Untagged
@@ -10459,6 +12218,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &1358092186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358092180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1358994323
 GameObject:
   m_ObjectHideFlags: 0
@@ -10483,7 +12271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358994323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.18, y: 0.423, z: -17.99}
+  m_LocalPosition: {x: 26.172, y: 0.423, z: 23.4}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 651862700}
@@ -10501,6 +12289,7 @@ GameObject:
   - component: {fileID: 1373167492}
   - component: {fileID: 1373167491}
   - component: {fileID: 1373167493}
+  - component: {fileID: 1373167494}
   m_Layer: 0
   m_Name: Shelf   (10)
   m_TagString: Untagged
@@ -10587,6 +12376,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1373167494
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373167489}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1379876123
 GameObject:
   m_ObjectHideFlags: 0
@@ -10599,6 +12404,7 @@ GameObject:
   - component: {fileID: 1379876126}
   - component: {fileID: 1379876125}
   - component: {fileID: 1379876127}
+  - component: {fileID: 1379876128}
   m_Layer: 0
   m_Name: Sopping Cart Closed (3)
   m_TagString: Untagged
@@ -10685,6 +12491,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8102614790813122353, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1379876128
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379876123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.015, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1379912356
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,6 +12613,7 @@ GameObject:
   - component: {fileID: 1407535289}
   - component: {fileID: 1407535291}
   - component: {fileID: 1407535292}
+  - component: {fileID: 1407535293}
   m_Layer: 0
   m_Name: Floo 4 (58)
   m_TagString: Untagged
@@ -10890,6 +12713,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &1407535293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407535287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1432172070
 GameObject:
   m_ObjectHideFlags: 0
@@ -10903,6 +12755,7 @@ GameObject:
   - component: {fileID: 1432172072}
   - component: {fileID: 1432172074}
   - component: {fileID: 1432172075}
+  - component: {fileID: 1432172076}
   m_Layer: 0
   m_Name: Floo 4 (29)
   m_TagString: Untagged
@@ -11002,6 +12855,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &1432172076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432172070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1438997898
 GameObject:
   m_ObjectHideFlags: 0
@@ -11013,6 +12895,7 @@ GameObject:
   - component: {fileID: 1438997899}
   - component: {fileID: 1438997901}
   - component: {fileID: 1438997900}
+  - component: {fileID: 1438997902}
   m_Layer: 0
   m_Name: Lamp 1 (7)
   m_TagString: Untagged
@@ -11086,6 +12969,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438997898}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1438997902
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438997898}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1481160920
 GameObject:
   m_ObjectHideFlags: 0
@@ -11099,6 +12998,7 @@ GameObject:
   - component: {fileID: 1481160922}
   - component: {fileID: 1481160924}
   - component: {fileID: 1481160925}
+  - component: {fileID: 1481160926}
   m_Layer: 0
   m_Name: Floo 4 (3)
   m_TagString: Untagged
@@ -11198,6 +13098,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0, z: 0.0004182499}
+--- !u!114 &1481160926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481160920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1482035657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11211,6 +13140,7 @@ GameObject:
   - component: {fileID: 1482035659}
   - component: {fileID: 1482035661}
   - component: {fileID: 1482035662}
+  - component: {fileID: 1482035663}
   m_Layer: 0
   m_Name: Floo 4 (12)
   m_TagString: Untagged
@@ -11310,6 +13240,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &1482035663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482035657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1514328176
 GameObject:
   m_ObjectHideFlags: 0
@@ -11353,6 +13312,7 @@ GameObject:
   - component: {fileID: 1521939398}
   - component: {fileID: 1521939400}
   - component: {fileID: 1521939401}
+  - component: {fileID: 1521939402}
   m_Layer: 0
   m_Name: Floo 4 (38)
   m_TagString: Untagged
@@ -11452,6 +13412,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &1521939402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521939396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1525278426
 GameObject:
   m_ObjectHideFlags: 0
@@ -11465,6 +13454,7 @@ GameObject:
   - component: {fileID: 1525278428}
   - component: {fileID: 1525278430}
   - component: {fileID: 1525278431}
+  - component: {fileID: 1525278432}
   m_Layer: 0
   m_Name: Floo 4 (8)
   m_TagString: Untagged
@@ -11564,6 +13554,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &1525278432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525278426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1528465842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11635,7 +13654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1550508416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11730,6 +13749,7 @@ GameObject:
   - component: {fileID: 1550739512}
   - component: {fileID: 1550739514}
   - component: {fileID: 1550739515}
+  - component: {fileID: 1550739516}
   m_Layer: 0
   m_Name: Floo 4 (50)
   m_TagString: Untagged
@@ -11829,6 +13849,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &1550739516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550739510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1551420300
 GameObject:
   m_ObjectHideFlags: 0
@@ -11940,6 +13989,7 @@ GameObject:
   - component: {fileID: 1556548668}
   - component: {fileID: 1556548670}
   - component: {fileID: 1556548671}
+  - component: {fileID: 1556548672}
   m_Layer: 0
   m_Name: Floo 4 (41)
   m_TagString: Untagged
@@ -12039,6 +14089,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &1556548672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556548666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1560746128
 GameObject:
   m_ObjectHideFlags: 0
@@ -12137,6 +14216,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!1 &1570917052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1570917053}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1570917053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570917052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.520035, y: -14.099451, z: 8.731983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 382997919}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1589990134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12226,6 +14336,7 @@ GameObject:
   - component: {fileID: 1600475504}
   - component: {fileID: 1600475503}
   - component: {fileID: 1600475505}
+  - component: {fileID: 1600475506}
   m_Layer: 0
   m_Name: long round shelf (2)
   m_TagString: Untagged
@@ -12312,6 +14423,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8688236207882575699, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1600475506
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600475501}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.019000001, y: 0.015, z: 0.013}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.010000001, y: 0.006, z: 0.012}
+  m_TimeToStationary: 0.5
 --- !u!1 &1610309697
 GameObject:
   m_ObjectHideFlags: 0
@@ -12423,6 +14550,7 @@ GameObject:
   - component: {fileID: 1613092063}
   - component: {fileID: 1613092065}
   - component: {fileID: 1613092066}
+  - component: {fileID: 1613092067}
   m_Layer: 0
   m_Name: Floo 4 (57)
   m_TagString: Untagged
@@ -12522,6 +14650,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &1613092067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613092061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1635179557
 GameObject:
   m_ObjectHideFlags: 0
@@ -12535,6 +14692,7 @@ GameObject:
   - component: {fileID: 1635179559}
   - component: {fileID: 1635179561}
   - component: {fileID: 1635179562}
+  - component: {fileID: 1635179563}
   m_Layer: 0
   m_Name: Floo 4 (22)
   m_TagString: Untagged
@@ -12634,6 +14792,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: 0, z: 0.0004182598}
+--- !u!114 &1635179563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635179557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1638450079
 GameObject:
   m_ObjectHideFlags: 0
@@ -12646,6 +14833,7 @@ GameObject:
   - component: {fileID: 1638450082}
   - component: {fileID: 1638450081}
   - component: {fileID: 1638450083}
+  - component: {fileID: 1638450084}
   m_Layer: 0
   m_Name: softdrink 1 (2)
   m_TagString: Untagged
@@ -12732,6 +14920,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3247480035516220982, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1638450084
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638450079}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.038000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1641669420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12765,6 +14969,7 @@ MonoBehaviour:
   m_CourseFreeCamera: {fileID: 717234661}
   ScoreBoard: {fileID: 365767180}
   scoreboard_Duration: 5
+  displayScoreBoard: 0
 --- !u!4 &1641669422
 Transform:
   m_ObjectHideFlags: 0
@@ -12791,6 +14996,7 @@ GameObject:
   - component: {fileID: 1644852568}
   - component: {fileID: 1644852567}
   - component: {fileID: 1644852569}
+  - component: {fileID: 1644852570}
   m_Layer: 0
   m_Name: Shelf   (5)
   m_TagString: Untagged
@@ -12877,6 +15083,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1644852570
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644852565}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1658760599
 GameObject:
   m_ObjectHideFlags: 0
@@ -12890,6 +15112,7 @@ GameObject:
   - component: {fileID: 1658760601}
   - component: {fileID: 1658760603}
   - component: {fileID: 1658760604}
+  - component: {fileID: 1658760605}
   m_Layer: 0
   m_Name: Floo 4 (24)
   m_TagString: Untagged
@@ -12989,6 +15212,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &1658760605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658760599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1664525309
 GameObject:
   m_ObjectHideFlags: 0
@@ -13002,6 +15254,7 @@ GameObject:
   - component: {fileID: 1664525311}
   - component: {fileID: 1664525313}
   - component: {fileID: 1664525314}
+  - component: {fileID: 1664525315}
   m_Layer: 0
   m_Name: Floo 4 (32)
   m_TagString: Untagged
@@ -13101,6 +15354,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &1664525315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664525309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1672281134
 GameObject:
   m_ObjectHideFlags: 0
@@ -13165,7 +15447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681954938
 GameObject:
@@ -13180,6 +15462,7 @@ GameObject:
   - component: {fileID: 1681954940}
   - component: {fileID: 1681954942}
   - component: {fileID: 1681954943}
+  - component: {fileID: 1681954944}
   m_Layer: 0
   m_Name: Floo 4 (62)
   m_TagString: Untagged
@@ -13279,6 +15562,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &1681954944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681954938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1693490809
 GameObject:
   m_ObjectHideFlags: 0
@@ -13388,6 +15700,7 @@ GameObject:
   - component: {fileID: 1710910988}
   - component: {fileID: 1710910990}
   - component: {fileID: 1710910989}
+  - component: {fileID: 1710910991}
   m_Layer: 0
   m_Name: Lamp 1 (8)
   m_TagString: Untagged
@@ -13461,6 +15774,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710910987}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1710910991
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710910987}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1738693491
 GameObject:
   m_ObjectHideFlags: 0
@@ -13473,6 +15802,7 @@ GameObject:
   - component: {fileID: 1738693494}
   - component: {fileID: 1738693493}
   - component: {fileID: 1738693495}
+  - component: {fileID: 1738693496}
   m_Layer: 0
   m_Name: Shelf   (4)
   m_TagString: Untagged
@@ -13559,6 +15889,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1738693496
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738693491}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1758901523
 GameObject:
   m_ObjectHideFlags: 0
@@ -13572,6 +15918,7 @@ GameObject:
   - component: {fileID: 1758901525}
   - component: {fileID: 1758901527}
   - component: {fileID: 1758901528}
+  - component: {fileID: 1758901529}
   m_Layer: 0
   m_Name: Floo 4 (27)
   m_TagString: Untagged
@@ -13671,6 +16018,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &1758901529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758901523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1763561063
 GameObject:
   m_ObjectHideFlags: 0
@@ -13777,6 +16153,7 @@ GameObject:
   - component: {fileID: 1775115057}
   - component: {fileID: 1775115059}
   - component: {fileID: 1775115060}
+  - component: {fileID: 1775115061}
   m_Layer: 0
   m_Name: Floo 4 (46)
   m_TagString: Untagged
@@ -13876,6 +16253,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000029802322, z: 0.00041824643}
+--- !u!114 &1775115061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775115055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1784085672
 GameObject:
   m_ObjectHideFlags: 0
@@ -13888,6 +16294,7 @@ GameObject:
   - component: {fileID: 1784085675}
   - component: {fileID: 1784085674}
   - component: {fileID: 1784085676}
+  - component: {fileID: 1784085677}
   m_Layer: 0
   m_Name: fridge closed (3)
   m_TagString: Untagged
@@ -13974,6 +16381,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7806146900906723154, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1784085677
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784085672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.002}
+  m_TimeToStationary: 0.5
 --- !u!1 &1790971796
 GameObject:
   m_ObjectHideFlags: 0
@@ -13987,6 +16410,7 @@ GameObject:
   - component: {fileID: 1790971798}
   - component: {fileID: 1790971800}
   - component: {fileID: 1790971801}
+  - component: {fileID: 1790971802}
   m_Layer: 0
   m_Name: Floo 4 (5)
   m_TagString: Untagged
@@ -14086,6 +16510,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: 0, z: 0.0004182499}
+--- !u!114 &1790971802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790971796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1817837960
 GameObject:
   m_ObjectHideFlags: 0
@@ -14196,6 +16649,7 @@ GameObject:
   - component: {fileID: 1852824766}
   - component: {fileID: 1852824765}
   - component: {fileID: 1852824767}
+  - component: {fileID: 1852824768}
   m_Layer: 0
   m_Name: Sopping Cart Closed (1)
   m_TagString: Untagged
@@ -14282,6 +16736,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8102614790813122353, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1852824768
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852824763}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1871200872
 GameObject:
   m_ObjectHideFlags: 0
@@ -14295,6 +16765,7 @@ GameObject:
   - component: {fileID: 1871200874}
   - component: {fileID: 1871200876}
   - component: {fileID: 1871200877}
+  - component: {fileID: 1871200878}
   m_Layer: 0
   m_Name: Floo 4 (52)
   m_TagString: Untagged
@@ -14394,6 +16865,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: 0.000000059604645, z: 0.00041824198}
+--- !u!114 &1871200878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871200872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1873789919
 GameObject:
   m_ObjectHideFlags: 0
@@ -14445,6 +16945,7 @@ GameObject:
   - component: {fileID: 1878499567}
   - component: {fileID: 1878499569}
   - component: {fileID: 1878499570}
+  - component: {fileID: 1878499571}
   m_Layer: 0
   m_Name: Floo 4 (13)
   m_TagString: Untagged
@@ -14544,6 +17045,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000074505806, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &1878499571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878499565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1880717563
 GameObject:
   m_ObjectHideFlags: 0
@@ -14557,6 +17087,7 @@ GameObject:
   - component: {fileID: 1880717565}
   - component: {fileID: 1880717567}
   - component: {fileID: 1880717568}
+  - component: {fileID: 1880717569}
   m_Layer: 0
   m_Name: Floo 4 (31)
   m_TagString: Untagged
@@ -14656,6 +17187,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &1880717569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880717563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1882121833
 GameObject:
   m_ObjectHideFlags: 0
@@ -14668,6 +17228,7 @@ GameObject:
   - component: {fileID: 1882121836}
   - component: {fileID: 1882121835}
   - component: {fileID: 1882121837}
+  - component: {fileID: 1882121838}
   m_Layer: 0
   m_Name: Shelf   (13)
   m_TagString: Untagged
@@ -14754,6 +17315,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1882121838
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882121833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.010000001, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1882504559
 GameObject:
   m_ObjectHideFlags: 0
@@ -14961,6 +17538,7 @@ GameObject:
   - component: {fileID: 1888598110}
   - component: {fileID: 1888598112}
   - component: {fileID: 1888598111}
+  - component: {fileID: 1888598113}
   m_Layer: 0
   m_Name: Lamp 1 (6)
   m_TagString: Untagged
@@ -15034,6 +17612,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888598109}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1888598113
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888598109}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1898135338
 GameObject:
   m_ObjectHideFlags: 0
@@ -15047,6 +17641,7 @@ GameObject:
   - component: {fileID: 1898135340}
   - component: {fileID: 1898135342}
   - component: {fileID: 1898135343}
+  - component: {fileID: 1898135344}
   m_Layer: 0
   m_Name: Floo 4 (63)
   m_TagString: Untagged
@@ -15146,6 +17741,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: -0.000000059604645, z: 0.00041826107}
+--- !u!114 &1898135344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898135338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1905501416
 GameObject:
   m_ObjectHideFlags: 0
@@ -15269,6 +17893,7 @@ GameObject:
   - component: {fileID: 1927374434}
   - component: {fileID: 1927374433}
   - component: {fileID: 1927374435}
+  - component: {fileID: 1927374436}
   m_Layer: 0
   m_Name: ' Drinks crate red (2)'
   m_TagString: Untagged
@@ -15355,6 +17980,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8068986995020451863, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1927374436
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927374431}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.015000001, y: 0.021000002, z: 0.015000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1930317331
 GameObject:
   m_ObjectHideFlags: 0
@@ -15368,6 +18009,7 @@ GameObject:
   - component: {fileID: 1930317333}
   - component: {fileID: 1930317335}
   - component: {fileID: 1930317336}
+  - component: {fileID: 1930317337}
   m_Layer: 0
   m_Name: Floo 4 (30)
   m_TagString: Untagged
@@ -15467,6 +18109,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000059604645, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &1930317337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930317331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1948562037
 GameObject:
   m_ObjectHideFlags: 0
@@ -15479,6 +18150,7 @@ GameObject:
   - component: {fileID: 1948562040}
   - component: {fileID: 1948562039}
   - component: {fileID: 1948562041}
+  - component: {fileID: 1948562042}
   m_Layer: 0
   m_Name: ' Drinks crate red (1)'
   m_TagString: Untagged
@@ -15565,6 +18237,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8068986995020451863, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1948562042
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948562037}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.015000001, y: 0.021000002, z: 0.015000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1951907604
 GameObject:
   m_ObjectHideFlags: 0
@@ -15577,6 +18265,7 @@ GameObject:
   - component: {fileID: 1951907606}
   - component: {fileID: 1951907605}
   - component: {fileID: 1951907608}
+  - component: {fileID: 1951907609}
   m_Layer: 0
   m_Name: Trolley1
   m_TagString: Untagged
@@ -15663,6 +18352,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8102614790813122353, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1951907609
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951907604}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.02, z: 0.02}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1967751109
 GameObject:
   m_ObjectHideFlags: 0
@@ -15675,6 +18380,7 @@ GameObject:
   - component: {fileID: 1967751112}
   - component: {fileID: 1967751111}
   - component: {fileID: 1967751113}
+  - component: {fileID: 1967751114}
   m_Layer: 0
   m_Name: Shelf   (2)
   m_TagString: Untagged
@@ -15761,6 +18467,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &1967751114
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967751109}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.025, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1974467605
 GameObject:
   m_ObjectHideFlags: 0
@@ -15774,6 +18496,7 @@ GameObject:
   - component: {fileID: 1974467607}
   - component: {fileID: 1974467609}
   - component: {fileID: 1974467610}
+  - component: {fileID: 1974467611}
   m_Layer: 0
   m_Name: Floo 4 (10)
   m_TagString: Untagged
@@ -15873,6 +18596,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &1974467611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974467605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1981875284
 GameObject:
   m_ObjectHideFlags: 0
@@ -15886,6 +18638,7 @@ GameObject:
   - component: {fileID: 1981875286}
   - component: {fileID: 1981875288}
   - component: {fileID: 1981875289}
+  - component: {fileID: 1981875290}
   m_Layer: 0
   m_Name: Floo 4 (35)
   m_TagString: Untagged
@@ -15985,6 +18738,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000052154064, z: 0.00041822108}
+--- !u!114 &1981875290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981875284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1991170951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16037,6 +18819,7 @@ GameObject:
   - component: {fileID: 2025835021}
   - component: {fileID: 2025835023}
   - component: {fileID: 2025835024}
+  - component: {fileID: 2025835025}
   m_Layer: 0
   m_Name: Floo 4 (28)
   m_TagString: Untagged
@@ -16136,6 +18919,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.000000078231096, y: -0.000000022351742, z: 0.00041822554}
+--- !u!114 &2025835025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025835019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &2035272370
 GameObject:
   m_ObjectHideFlags: 0
@@ -16149,6 +18961,7 @@ GameObject:
   - component: {fileID: 2035272372}
   - component: {fileID: 2035272374}
   - component: {fileID: 2035272375}
+  - component: {fileID: 2035272376}
   m_Layer: 0
   m_Name: Floo 4 (11)
   m_TagString: Untagged
@@ -16248,6 +19061,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000008940697, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &2035272376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035272370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &2042480327
 GameObject:
   m_ObjectHideFlags: 0
@@ -16296,6 +19138,7 @@ GameObject:
   - component: {fileID: 2052021283}
   - component: {fileID: 2052021282}
   - component: {fileID: 2052021284}
+  - component: {fileID: 2052021285}
   m_Layer: 0
   m_Name: fridge closed (2)
   m_TagString: Untagged
@@ -16382,6 +19225,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7806146900906723154, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &2052021285
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052021280}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.002}
+  m_TimeToStationary: 0.5
 --- !u!1 &2052889279
 GameObject:
   m_ObjectHideFlags: 0
@@ -16395,6 +19254,7 @@ GameObject:
   - component: {fileID: 2052889281}
   - component: {fileID: 2052889283}
   - component: {fileID: 2052889284}
+  - component: {fileID: 2052889285}
   m_Layer: 0
   m_Name: Floo 4 (15)
   m_TagString: Untagged
@@ -16494,6 +19354,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0.000000029802322, z: 0.00041824547}
+--- !u!114 &2052889285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052889279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &2081381520
 GameObject:
   m_ObjectHideFlags: 0
@@ -16505,6 +19394,7 @@ GameObject:
   - component: {fileID: 2081381521}
   - component: {fileID: 2081381523}
   - component: {fileID: 2081381522}
+  - component: {fileID: 2081381524}
   m_Layer: 0
   m_Name: Lamp 1 (3)
   m_TagString: Untagged
@@ -16578,6 +19468,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081381520}
   m_Mesh: {fileID: 5085579238537228670, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &2081381524
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081381520}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.053000003, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2103312475
 GameObject:
   m_ObjectHideFlags: 0
@@ -16590,6 +19496,7 @@ GameObject:
   - component: {fileID: 2103312478}
   - component: {fileID: 2103312477}
   - component: {fileID: 2103312479}
+  - component: {fileID: 2103312480}
   m_Layer: 0
   m_Name: Shelf   (5)
   m_TagString: Untagged
@@ -16676,6 +19583,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2043061002782729565, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &2103312480
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103312475}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.031000001, y: 0.015, z: 0.031000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.031000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2107103878
 GameObject:
   m_ObjectHideFlags: 0
@@ -16798,6 +19721,7 @@ GameObject:
   - component: {fileID: 2145579282}
   - component: {fileID: 2145579281}
   - component: {fileID: 2145579283}
+  - component: {fileID: 2145579284}
   m_Layer: 0
   m_Name: cooled shelf (1)
   m_TagString: Untagged
@@ -16884,6 +19808,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3575118045824404264, guid: b7546ce1f9368254e8be3ad761cc2930, type: 3}
+--- !u!208 &2145579284
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145579279}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.040000003, y: 0.02, z: 0.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.022000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &6721625748008618
 GameObject:
   m_ObjectHideFlags: 0
@@ -18610,6 +21550,7 @@ GameObject:
   - component: {fileID: 746894078056292851}
   - component: {fileID: 1075243834594517874}
   - component: {fileID: 1075243834594517875}
+  - component: {fileID: 1075243834594517876}
   m_Layer: 0
   m_Name: Floo 4
   m_TagString: Untagged
@@ -18644,6 +21585,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15999997, z: 0.0008364723}
   m_Center: {x: 0.00000011920929, y: 0, z: 0.0004182499}
+--- !u!114 &1075243834594517876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075243834594517873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.10666666
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!4 &1082016152955412394
 Transform:
   m_ObjectHideFlags: 0
@@ -23013,7 +25983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350369513684173324, guid: 2f188230c424b3847b94956e152e9de3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3350369513684173324, guid: 2f188230c424b3847b94956e152e9de3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24536,6 +27506,63 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &4055322976159036239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0095482
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.251984
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318648, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055322976716318649, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
+      propertyPath: m_Name
+      value: enemySpawn
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d14c56607b5ad7d42998c6dde14fc618, type: 3}
 --- !u!1 &4102486514322550242
 GameObject:
   m_ObjectHideFlags: 0

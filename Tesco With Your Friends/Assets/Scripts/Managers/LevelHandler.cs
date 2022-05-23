@@ -18,11 +18,14 @@ namespace Tesco.Managers {
         private List<AsyncOperation> m_Operations;
         [SerializeField] private GameObject m_LoadingScreen;
 
+        public GameManager manager;
+
         // Load main menu on start
         private void Awake() {
             m_Current = LevelType.MainMenu;
             SceneManager.LoadScene(m_Current.ToString(), LoadSceneMode.Additive);
             m_Operations = new List<AsyncOperation>();
+            manager = GetComponent<GameManager>();
         }
 
         // Switch to the given level
@@ -58,6 +61,13 @@ namespace Tesco.Managers {
 
             if (m_LoadingScreen != null) {
                 m_LoadingScreen.SetActive(false);
+            }
+
+            // Added this to spawn the AI
+            if (manager.spawnAI)
+            {
+                manager.spawnAI = false;
+                manager.DeployEnemy();
             }
         }
     }
