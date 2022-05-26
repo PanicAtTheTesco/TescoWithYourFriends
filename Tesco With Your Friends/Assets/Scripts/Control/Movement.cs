@@ -124,7 +124,7 @@ public class Movement : MonoBehaviour
 
             if (FireballActive)
             {
-                speedMultiplier = 6.0f;
+                speedMultiplier = 3.0f;
                 //ps.Play();
             }
             
