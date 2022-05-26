@@ -146,6 +146,7 @@ namespace Tesco.Level_Stuff {
 
             // Temporary - log win/loss for end screen
             m_GameManager.WinState = strokes < m_CurrentHole.GetStrokes();
+            m_GameManager.Score = m_CurrentHole.GetStrokes() - strokes;
 
             // If everyone is in the hold, move to the next hole/course
             if (m_InHole.Count >= m_PlayerScores.Count) {
