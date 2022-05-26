@@ -9,6 +9,8 @@ public class SwitchCamera : MonoBehaviour
     
 
     public GameObject m_ControlUI;
+    public GameObject m_freeUi;
+    public GameObject m_BallUI;
     public GameObject m_SliderUI;
     public GameObject m_timeUI;
     public GameObject m_CinCamUI;
@@ -27,6 +29,10 @@ public class SwitchCamera : MonoBehaviour
         FreeCam.SetActive(true);
 
         m_ControlUI.SetActive(false);
+        
+        m_freeUi.SetActive(false);
+        m_BallUI.SetActive(false);
+        
         m_SliderUI.SetActive(false); 
         m_timeUI.SetActive(false);
         m_CinCamUI.SetActive(true);
@@ -45,6 +51,8 @@ public class SwitchCamera : MonoBehaviour
         
 
             m_ControlUI.SetActive(true);
+            m_BallUI.SetActive(true);
+            
             m_SliderUI.SetActive(true);
             m_timeUI.SetActive(true);
             m_CinCamUI.SetActive(false);
@@ -56,7 +64,7 @@ public class SwitchCamera : MonoBehaviour
         {
             BallCam.SetActive(true);
             FreeCam.SetActive(false);
-            
+            m_BallUI.SetActive(true);
 
             m_ControlUI.SetActive(true);
             m_SliderUI.SetActive(true);
@@ -75,7 +83,11 @@ public class SwitchCamera : MonoBehaviour
             {
                 BallCam.SetActive(false);
                 FreeCam.SetActive(true);
-                m_ControlUI.SetActive(false);
+                
+                m_ControlUI.SetActive(true);
+                m_freeUi.SetActive(true);
+                m_BallUI.SetActive(false);
+                
                 m_SliderUI.SetActive(false);
                 m_timeUI.SetActive(false);
             }
@@ -83,7 +95,11 @@ public class SwitchCamera : MonoBehaviour
             {
                 BallCam.SetActive(true);
                 FreeCam.SetActive(false);
+                
                 m_ControlUI.SetActive(true);
+                m_freeUi.SetActive(false);
+                m_BallUI.SetActive(true);
+                
                 m_SliderUI.SetActive(true);
                 m_timeUI.SetActive(true);
             }
