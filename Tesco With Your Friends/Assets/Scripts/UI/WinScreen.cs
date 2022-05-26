@@ -16,7 +16,16 @@ public class WinScreen : MonoBehaviour
     {
         m_GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        m_WinLose.text = m_GameManager.WinState ? "You won!" : "You lost!";
+
+        if (m_GameManager.WinState)
+        {
+            m_WinLose.text = "You won!";
+            m_Score.text = $"Your score was: {m_GameManager.Score}!";
+        }
+        else
+        {
+            m_WinLose.text = "You lost!";
+        }
     }
 
     // Update is called once per frame
